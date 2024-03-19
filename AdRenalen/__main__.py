@@ -11,8 +11,19 @@ from AdRenalen.misc import sudo
 from AdRenalen.plugins import ALL_MODULES
 from AdRenalen.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
-
-
+from FallenMusic import (
+    ASS_ID,
+    ASS_NAME,
+    ASS_USERNAME,
+    BOT_ID,
+    BOT_NAME,
+    BOT_USERNAME,
+    LOGGER,
+    SUNAME,
+    app,
+    app2,
+    pytgcalls,
+)
 async def init():
     if (
         not config.STRING1
