@@ -1,9 +1,9 @@
 import asyncio
 import random
-from OmarMuSic.misc import SUDOERS
+from AdRenalen.misc import SUDOERS
 from pyrogram.types import (Message,InlineKeyboardButton,InlineKeyboardMarkup,CallbackQuery,ChatPrivileges)
 from pyrogram import filters, Client
-from OmarMuSic import app
+from AdRenalen import app
 from config import *
 
 bot_name = {}
