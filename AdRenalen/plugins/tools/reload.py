@@ -6,7 +6,7 @@ from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
 from AdRenalen import app
-from AdRenalen.core.call import Anony
+from AdRenalen.core.call import Omar
 from AdRenalen.misc import db
 from AdRenalen.utils.database import get_assistant, get_authuser_names, get_cmode
 from AdRenalen.utils.decorators import ActualAdminCB, AdminActual, language
