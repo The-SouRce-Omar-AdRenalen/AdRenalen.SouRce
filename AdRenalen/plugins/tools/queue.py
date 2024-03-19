@@ -8,7 +8,7 @@ from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 import config
 from AdRenalen import app
 from AdRenalen.misc import db
-from AdRenalen.utils import AnonyBin, get_channeplayCB, seconds_to_min
+from AdRenalen.utils import OmarBin, get_channeplayCB, seconds_to_min
 from AdRenalen.utils.database import get_cmode, is_active_chat, is_music_playing
 from AdRenalen.utils.decorators.language import language, languageCB
 from AdRenalen.utils.inline import queue_back_markup, queue_markup
