@@ -17,7 +17,6 @@ userbot = Userbot()
 global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_MENTION, fallendb 
 global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
 
-getme = await app.get_me()
 BOT_ID = getme.id
 BOT_NAME = getme.first_name
 BOT_USERNAME = getme.username
