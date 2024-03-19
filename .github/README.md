@@ -7,8 +7,12 @@
 </p>
 
 <h3 align="center">
-    ─「 sᴜᴩᴩᴏʀᴛ 」─
+     • ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •
 </h3>
+
+<p align="center">
+<a href="https://telegram.me/BAR_ADRENALEN"><img src="https://img.shields.io/badge/Dev.SuoRceblue.svg?style=for-the-badge&logo=Telegram"></a>
+</p>
 
 <p align="center">
 <a href="https://telegram.me/WA_ADRENALEN"><img src="https://img.shields.io/badge/-Support%20Group-blue.svg?style=for-the-badge&logo=Telegram"></a>
@@ -16,4 +20,4 @@
 
 <p align="center">
 <a href="https://telegram.me/BAR_ADRENALEN"><img src="https://img.shields.io/badge/-Support%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
-</p>
+</p
