@@ -17,15 +17,15 @@ userbot = Userbot()
 global BOT_ID, BOT_NAME, BOT_USERNAME, BOT_MENTION, fallendb 
 global ASS_ID, ASS_NAME, ASS_USERNAME, ASS_MENTION, SUDOERS
 
-    getme = await app.get_me()
-    BOT_ID = getme.id
-    BOT_NAME = getme.first_name
-    BOT_USERNAME = getme.username
-    BOT_MENTION = getme.mention
+getme = await app.get_me()
+BOT_ID = getme.id
+BOT_NAME = getme.first_name
+BOT_USERNAME = getme.username
+BOT_MENTION = getme.mention
 
-    await app2.start()
-    LOGGER.info(
-        "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x41\x73\x73\x69\x73\x74\x61\x6e\x74\x2e\x2e\x2e"
+await app2.start()
+LOGGER.info(  
+    "[•] \x42\x6f\x6f\x74\x69\x6e\x67\x20\x46\x61\x6c\x6c\x65\x6e\x20\x4d\x75\x73\x69\x63\x20\x41\x73\x73\x69\x73\x74\x61\x6e\x74\x2e\x2e\x2e"
     )
 
 from .platforms import *
