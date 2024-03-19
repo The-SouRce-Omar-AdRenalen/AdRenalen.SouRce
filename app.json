@@ -1,0 +1,146 @@
+{
+    "name": "• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •",
+    "description": "- لـ تشغيـل الاغانـي والفيديـو والبثـوث المباشـرة فـي المكالمـات الصوتيـه والمرئيـة عـلى تيليجــرام",
+    "logo": "https://telegra.ph/file/6b073b212869b5630968f.jpg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "AnonX",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      "API_ID": {
+        "ايبي ايدي المطور ",
+        "value": "26566005",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "ايبي هاش للمطور ",
+        "value": "690c0394fc7bf850afd91ab0f66160b2",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot's token from Botfather",
+        "value": "",
+        "required": true
+      },
+      "MONGO_DB_URI": {
+        "description": "كود النجو دي بي ",
+        "value": "mongodb+srv://DEVOMAR:<password>@cluster0.wlebnwn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "⦗1924832439⦘ ↫ ايدي المطور ",
+        "value": "1924832439",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "كود جلسه للحساب المساعد بايرو جرام v2",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "⦗ https://dashboard.heroku.com/account ⦘ الحصول علي كود apk لـ هيروكو ",
+        "value": "d8390701-c1c3-4362-a6f7-69cf71d2edde",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Your heroku app name",
+        "value": "",
+        "required": false
+      },
+      "LOGGER_ID": {
+        "description": "ايدي الجروب وبتحط -100 قبلها ",
+        "value": "-1002107304490",
+        "required": true
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "stack": "container"
+  }
+
+
+
+
+
+
+
+
+
+{
+    "name": "• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •",
+    "description": "- لـ تشغيـل الاغانـي والفيديـو والبثـوث المباشـرة فـي المكالمـات الصوتيـه والمرئيـة عـلى تيليجــرام",
+    "logo": "https://telegra.ph/file/6b073b212869b5630968f.jpg",
+    "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "Zelzal",
+    "MusicBot",
+    "telegram-bot",
+    "pyrogram"
+    ],
+    "env": {
+      "BOT_TOKEN": {
+        "description": "⦗@BotFather⦘ ↫ توكن البوت من هنا ",
+        "value": "",
+        "required": true
+      },
+      "OWNER_ID": {
+        "description": "⦗1924832439⦘ ↫ ايدي المطور ",
+        "value": "1924832439",
+        "required": true
+      },
+      "STRING_SESSION": {
+        "description": "⦗ بايرو جرام V2 ⦘ ↫كود جلسة للحساب المساعد ",
+        "value": "",
+        "required": true
+      },
+      "HEROKU_API_KEY": {
+        "description": "⦗ https://dashboard.heroku.com/account ⦘ الحصول علي كود apk لـ هيروكو ",
+        "value": "d8390701-c1c3-4362-a6f7-69cf71d2edde",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "اسم التطبيق اول مربع تخدو كوبي وتعملو باست هنا ",
+        "value": "",
+        "required": false
+      },
+      "LOGGER_ID": {
+        "description": "ايدي الجروب وبتحط -100 قبلها ",
+        "value": "-1002107304490",
+        "required": true
+      }
+    },
+    "buildpacks": [
+          {
+              "url": "heroku/python"
+          },
+          {
+              "url": "heroku/nodejs"
+          },
+          {
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+          }
+      ],
+      "formation": {
+          "worker": {
+              "quantity": 1,
+              "size": "basic"
+          }
+      },
+      "stack": "container"
+  }
