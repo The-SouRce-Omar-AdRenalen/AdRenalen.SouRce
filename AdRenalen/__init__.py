@@ -1,4 +1,4 @@
-from AdRenalen.core.bot import Anony
+from AdRenalen.core.bot import Omar
 from AdRenalen.core.dir import dirr
 from AdRenalen.core.git import git
 from AdRenalen.core.userbot import Userbot
