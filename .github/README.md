@@ -11,7 +11,7 @@
 </h3>
 
 <p align="center">
-<a href="https://telegram.me/DEV_ADRENALEN"><img src="https://img.shields.io/badge/-DEVt%20Channel-blue.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://telegram.me/DEV_ADRENALEN"><img src="https://img.shields.io/badge/-DEVt%20SuoRce-blue.svg?style=for-the-badge&logo=Telegram"></a>
 </p>
 
 <p align="center">
