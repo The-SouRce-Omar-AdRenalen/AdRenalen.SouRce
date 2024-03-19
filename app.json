@@ -1,7 +1,7 @@
 {
-    "name": "• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •",
-    "description": "- لـ تشغيـل الاغانـي والفيديـو والبثـوث المباشـرة فـي المكالمـات الصوتيـه والمرئيـة عـلى تيليجــرام",
-    "logo": "https://telegra.ph/file/6b073b212869b5630968f.jpg",
+    "name": "ᴀɴᴏɴ ダ ᴍᴜsɪᴄ",
+    "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
+    "logo": "https://te.legra.ph/file/b8a0c1a00db3e57522b53.jpg",
     "keywords": [
     "python3",
     "telegram",
@@ -13,13 +13,13 @@
     ],
     "env": {
       "API_ID": {
-        "ايبي ايدي المطور ",
-        "value": "26566005",
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
         "required": true
       },
       "API_HASH": {
-        "description": "ايبي هاش للمطور ",
-        "value": "690c0394fc7bf850afd91ab0f66160b2",
+        "description": "Get this value from https://my.telegram.org",
+        "value": "",
         "required": true
       },
       "BOT_TOKEN": {
@@ -28,23 +28,23 @@
         "required": true
       },
       "MONGO_DB_URI": {
-        "description": "كود النجو دي بي ",
-        "value": "mongodb+srv://DEVOMAR:<password>@cluster0.wlebnwn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+        "description": "Get a mongodb url from https://cloud.mongodb.com.",
+        "value": "",
         "required": true
       },
       "OWNER_ID": {
-        "description": "⦗1924832439⦘ ↫ ايدي المطور ",
-        "value": "1924832439",
+        "description": "The user id of user whom you would like to add as OWNER.",
+        "value": "",
         "required": true
       },
       "STRING_SESSION": {
-        "description": "كود جلسه للحساب المساعد بايرو جرام v2",
+        "description": "A Pyrogram v2 String Session from @StringFatherBot on Telegram.",
         "value": "",
         "required": true
       },
       "HEROKU_API_KEY": {
-        "description": "⦗ https://dashboard.heroku.com/account ⦘ الحصول علي كود apk لـ هيروكو ",
-        "value": "d8390701-c1c3-4362-a6f7-69cf71d2edde",
+        "description": "Your Heroku account's API key",
+        "value": "",
         "required": false
       },
       "HEROKU_APP_NAME": {
@@ -53,8 +53,8 @@
         "required": false
       },
       "LOGGER_ID": {
-        "description": "ايدي الجروب وبتحط -100 قبلها ",
-        "value": "-1002107304490",
+        "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
+        "value": "",
         "required": true
       }
     },
@@ -66,7 +66,7 @@
               "url": "heroku/nodejs"
           },
           {
-              "url": "https://github.com/Omaradrenalen/AdRenalen.SouRce.git"
+              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
           }
       ],
       "stack": "container"
