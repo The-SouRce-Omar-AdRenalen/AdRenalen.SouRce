@@ -11,7 +11,7 @@ git()
 dbb()
 heroku()
 
-app = Anony()
+app = Omar()
 userbot = Userbot()
 
 
