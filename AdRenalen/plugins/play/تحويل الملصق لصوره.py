@@ -28,7 +28,7 @@ async def biio(client, message):
  
  
  
-@app.on_message(filters.command(["تحويل_لصوره", "تحويل الصوره"], ""))
+@app.on_message(filters.command(["تحويل الي صوره", "تحويل الملصق"], ""))
 async def sticker_image(client: Client, message: Message):
     reply = message.reply_to_message
     if not reply:
