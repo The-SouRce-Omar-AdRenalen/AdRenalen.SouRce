@@ -136,9 +136,9 @@ async def huhh(client: Client, message: Message):
      
      
      
-     @app.on_message(filters.command(["فيرس","عمر فيرس"], ""), group=221212)
-async def huhh(client: Client, message: Message):
-    await message.reply_photo(
+    @app.on_message(filters.command(["فيرس","عمر فيرس"], ""), group=221212)
+    async def huhh(client: Client, message: Message):
+       await message.reply_photo(
         photo=f"https://telegra.ph/file/783c1ff05a1480c023f9e.jpg",
         caption=f"""• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •\n- فيرس الـ شء 💘😂 ⋅""",
         reply_markup=InlineKeyboardMarkup(
