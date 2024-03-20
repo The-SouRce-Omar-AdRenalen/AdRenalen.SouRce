@@ -134,12 +134,13 @@ async def huhh(client: Client, message: Message):
          ),
      )
      
-     
-     
-    @app.on_message(filters.command(["فيرس","عمر فيرس"], ""), group=221212)
-    async def huhh(client: Client, message: Message):
-       await message.reply_photo(
-        photo=f"https://telegra.ph/file/783c1ff05a1480c023f9e.jpg",
+
+
+    
+@app.on_message(filters.command(["عمر فيرس","فيرس"], ""), group=221212)
+async def huhh(client: Client, message: Message):
+    await message.reply_photo( 
+      photo=f"https://telegra.ph/file/783c1ff05a1480c023f9e.jpg",
         caption=f"""• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •\n- فيرس الـ شء 💘😂 ⋅""",
         reply_markup=InlineKeyboardMarkup(
         [
@@ -148,7 +149,7 @@ async def huhh(client: Client, message: Message):
                         " ‹ قناة السورس 💘 ⋅ › ", url=f"https://t.me/WA_AdRenalen"),
                 ],[
                     InlineKeyboardButton(
-                        "⌯ عمر فيرس 💘 ⋅ ⌯", url=f"https://t.me/Xx_VAiRS_xX"), 
+                        "⌯ فيرس الـ تونز 💘 ⋅ ⌯", url=f"https://t.me/Xx_VAiRS_xX"), 
                     InlineKeyboardButton(
                         "⌯ ع ــمر ادرينالين 💘 ⋅ ⌯", url=f"https://t.me/DEV_ADRENALEN"),
                 ],[
@@ -158,6 +159,7 @@ async def huhh(client: Client, message: Message):
         ]
          ),
      )
+     
 ##############################################################
 ##############################################################
 ##############################################################
