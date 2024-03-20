@@ -9,13 +9,13 @@ import asyncio
 from pyrogram.types import VideoChatEnded, Message
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from AdRenalen.core.call import Mody
+from AdRenalen.core.call import Omar
 from AdRenalen.utils.database import *
 from pytgcalls.exceptions import (NoActiveGroupCall,TelegramServerError,AlreadyJoinedError)
 
 @app.on_message(filters.regex("^مين في الكول$|^مين ف الكول$|^الكول$"))
 async def strcall(client, message):
-    assistant = await group_assistant(Mody,message.chat.id)
+    assistant = await group_assistant(Omar,message.chat.id)
     try:
         await assistant.join_group_call(message.chat.id, AudioPiped("./AdRenalen/assets/مين_في_الكول.mp3"), stream_type=StreamType().pulse_stream)
         text="- الحبايب الي ف الكول 🎸 ⋅\n"
