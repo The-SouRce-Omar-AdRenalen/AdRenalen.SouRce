@@ -13,7 +13,7 @@ from pyrogram.types import InlineKeyboardButton
 RAEAK = ["زينه","حلوه","فخمه","جميله","خوش","انيقه","مو حلوه","بشعه","مو زينه","كلش حلوه","استمر بيها","احبها","غيرها حباب"]
 
 @app.on_message(
-    command(["رأيك","رأيك بصورتي","شون صورتي"])
+    command(["ج","جمالي"])
     & ~filters.edited
 )
 async def madison(client: Client, message: Message):
