@@ -31,8 +31,6 @@ caesar_responses = [
 
 @app.on_message(filters.command(["بوت", "البوت"], ""), group=88888)
 async def caesar_bot(client, message):
-    await message.reply_photo(
-    photo=f"https://telegra.ph/file/c6c72a67afca445b3175a.jpg",
     global name
     bot_username = (await app.get_me()).username
     bar = random.choice(caesar_responses).format(name=name)
@@ -40,8 +38,8 @@ async def caesar_bot(client, message):
         [InlineKeyboardButton("خدني لجروبك والنبي🥺♥", url=f"https://t.me/{bot_username}?startgroup=True")]
     ])
 
-    await message.reply_text(
-        text=f"",
+    await message.reply_photo(
+    photo=f"https://telegra.ph/file/c6c72a67afca445b3175a.jpg",
         disable_web_page_preview=True,
         reply_markup=keyboard
     )
