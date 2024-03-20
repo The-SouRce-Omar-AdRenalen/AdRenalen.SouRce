@@ -1,11 +1,24 @@
 import asyncio
+
 import random
+
 from AdRenalen import app
-from pyrogram.types import (InlineKeyboardButton,InlineKeyboardMarkup, Message)
+
+from pyrogram.types import (InlineKeyboardButton,
+
+                            InlineKeyboardMarkup, Message)
+
+
 from pyrogram import filters, Client
- 
-        
-txt = ["لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
+
+
+
+
+
+txt = [
+
+
+"لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
 "لو خيروك |  أن تعيش قصة فيلم هل تختار الأكشن أو الكوميديا؟ ",
 "لو خيروك |  بين تناول البيتزا وبين الايس كريم وذلك بشكل دائم؟ ",
 "لو خيروك |  بين إمكانية تواجدك في الفضاء وبين إمكانية تواجدك في البحر؟ ",
@@ -103,7 +116,13 @@ txt = ["لو خيروك |  بين شراء منزل صغير أو استئجار
 
 
         ]
-@app.on_message(filters.command(["خيروك","لو خيروك"], ""))
+
+
+        
+
+
+@app.on_message(filters.command(["لو خيروك","خيروك"], ""))
+
 async def khyrok(client: Client, message: Message):
 
       a = random.choice(txt)
@@ -111,9 +130,3 @@ async def khyrok(client: Client, message: Message):
       await message.reply(
 
         f"{a}")
-#𝙲𝙷.𝚂𝙾𝚄𝚁𝙲𝙴 : @WA_ADRENALEN
-#𝙳𝙴𝚅 𝙰𝙳𝚁𝙴𝙽𝙰𝙻𝙴𝙽 : @DEV_ADRENALEN
-#𝚂𝚄𝙿𝙿𝙾𝚁𝚃 : @BAR_ADRENALEN
-#Omar AdRenalen تم التعديل بواسطة 🎸 ⋅
-
-
