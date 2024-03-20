@@ -4,7 +4,7 @@ from AdRenalen import app
 import json 
 from config import BANNED_USERS
 import requests 
-from AdRenalen.core.call import Anony
+from AdRenalen.core.call import Omar
 
 
 @app.on_message(filters.command(["قران"],""))
@@ -106,8 +106,8 @@ async def show_quran(c,cq):
     i = int(data[2])
     quran = json.loads(open("AdRenalen/assets/quran.json").read())["s"] # ملف القران الي بستخدمه بتاع @devzaid 
     try:
-        await Anony.join_call(cq.message.chat.id, cq.message.chat.id, quran[number]["sounds"][i]["url"], video=None)
+        await Omar.join_call(cq.message.chat.id, cq.message.chat.id, quran[number]["sounds"][i]["url"], video=None)
         await cq.edit_message_reply_markup(ikm([[ikb(". ايقاف مؤقت .", callback_data = f"ADMIN Pause|{cq.message.chat.id}"),ikb(". استئناف .", callback_data=f"ADMIN Resume|{cq.message.chat.id}")],[ikb(". ايقاف .", callback_data = f"ADMIN Stop|{cq.message.chat.id}")]]))
     except:
-        await Anony.skip_stream(cq.message.chat.id, quran[number]["sounds"][i]["url"])
+        await Omar.skip_stream(cq.message.chat.id, quran[number]["sounds"][i]["url"])
         await cq.edit_message_reply_markup(ikm([[ikb(". ايقاف مؤقت .", callback_data = f"ADMIN Pause|{cq.message.chat.id}"),ikb(". استئناف .", callback_data=f"ADMIN Resume|{cq.message.chat.id}")],[ikb(". ايقاف .", callback_data = f"ADMIN Stop|{cq.message.chat.id}")]]))
