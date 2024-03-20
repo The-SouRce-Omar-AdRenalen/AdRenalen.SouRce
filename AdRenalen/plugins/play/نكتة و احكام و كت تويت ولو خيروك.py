@@ -1449,7 +1449,7 @@ txt = ["لو خيروك |  بين شراء منزل صغير أو استئجار
         ]
   @app.on_message(filters.command(["خيروك","لو خيروك"], ""))
 
-async def khyrok(client: Client, message: Message):
+  async def khyrok(client: Client, message: Message):
 
       a = random.choice(txt)
 
