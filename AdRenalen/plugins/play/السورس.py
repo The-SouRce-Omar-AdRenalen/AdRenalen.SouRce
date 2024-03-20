@@ -134,9 +134,8 @@ async def huhh(client: Client, message: Message):
          ),
      )
      
-     
-     
-     @app.on_message(filters.command(["فيرس ","فيروس"], ""), group=221212)
+
+@app.on_message(filters.command(["فيرس ","فيروس"], ""), group=221212)
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://telegra.ph/file/783c1ff05a1480c023f9e.jpg",
