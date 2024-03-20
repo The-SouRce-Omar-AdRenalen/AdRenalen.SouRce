@@ -17,6 +17,7 @@ python-dotenv
 pyyaml
 requests
 numpy
+telegraph
 speedtest-cli
 spotipy
 tgcrypto
