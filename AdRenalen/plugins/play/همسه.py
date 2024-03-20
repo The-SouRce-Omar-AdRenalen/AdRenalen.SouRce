@@ -1,8 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import os
-from config import api_hash
-from config import api_id
+from config import API_HASH
+from config import API_ID
 from config import BOT_TOKEN
 
 hmses = {}
