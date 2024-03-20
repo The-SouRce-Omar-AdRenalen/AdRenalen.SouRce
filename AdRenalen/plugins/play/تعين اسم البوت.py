@@ -37,7 +37,8 @@ async def caesar_bot(client, message):
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("خدني لجروبك والنبي🥺♥", url=f"https://t.me/{bot_username}?startgroup=True")]
     ])
-
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/6b073b212869b5630968f.jpg",
     await message.reply_text(
         text=f"{bar}",
         disable_web_page_preview=True,
