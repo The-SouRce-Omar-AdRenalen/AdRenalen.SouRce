@@ -8,7 +8,7 @@ import asyncio
 
 import random
 
-from OmarMuSic import app
+from AdRenalen import app
 
 from pyrogram.types import (InlineKeyboardButton,
 
