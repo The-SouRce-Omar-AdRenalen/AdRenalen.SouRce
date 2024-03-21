@@ -49,7 +49,6 @@ async def send_hms(client, message):
     chat_id=in_id,
     text=f"المستخدم ⦗ {user.mention} ⦘ 😂💘 ⋅\nلديك همسة من البني آدم دا\n⦗ {message.from_user.mention} ⦘ 😂💘 ⋅ \n انتا فقط من يستطيع رئية الهمسه ♥️",
     reply_markup=InlineKeyboardMarkup(
-        [[InlineKeyboardButton("- اضغط لرؤية الهمسة 👀", callback_data="hms_answer")]]    reply_markup=InlineKeyboardMarkup(
         [[InlineKeyboardButton("- اضغط لرؤية الهمسة 👀", callback_data="hms_answer")]]
     ),
 )
