@@ -15,7 +15,7 @@ async def instatus(app, message):
         enums.ChatMemberStatus.ADMINISTRATOR,
         enums.ChatMemberStatus.OWNER,
     ):
-        sent_message = await message.reply_text("استيراد بيانات المجموعة. . . . .")
+        sent_message = await message.reply_text("جاري تجميع البينات 💘 ⋅")
         deleted_acc = 0
         premium_acc = 0
         banned = 0
@@ -42,7 +42,7 @@ async def instatus(app, message):
 -᚜ - عدد الـ بوتات »  ⦗ {bot} ⦘ 💘 ⋅
 -᚜ - عدد الـ حسبات الـ محذوفه » ⦗ {deleted_acc} ⦘ 💘 ⋅ 
 -᚜ - عدد الـ مطرودين » ⦗ {banned} ⦘ 💘 ⋅
--᚜ - عدد الاغنية الي موثقين هنا » ⦗ {premium_acc} ⦘😂💘 ⋅""")
+-᚜ - عدد الاغنية الي موثقين هنا » ⦗ {premium_acc} ⦘ 😂💘 ⋅""")
     else:
         sent_message = await message.reply_text("يمكن للمسؤولين فقط!")
         await sleep(5)
