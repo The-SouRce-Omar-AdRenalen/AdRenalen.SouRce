@@ -61,14 +61,14 @@ def stream_markup_timer(_, chat_id, played, dur):
                 callback_data="GetTimer",
             )
         ],[
-            InlineKeyboardButton(text="استأناف ▷ ⋅", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="ايقاف مؤقت II ⋅", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="إعادة التشغيل ↻ ⋅", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="⦗ استأناف ▷ ⦘", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="⦗ ايقاف مؤقت II ⦘", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="⦗ إعادة تشغيل ↻ ⦘", callback_data=f"ADMIN Replay|{chat_id}"),
         ],[
-            InlineKeyboardButton(text="تخطي ‣‣I ⋅", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="ايقاف ▢ ⋅", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="⦗ تخطي ‣‣I ⦘", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="⦗ ايقاف ▢ ⦘", callback_data=f"ADMIN Stop|{chat_id}"),
         ],[
-            InlineKeyboardButton(text="ْ• ⌯ 𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •", url=f"https://t.me/WA_AdRenalen"),
+            InlineKeyboardButton(text="• ⌯ 𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •", url=f"https://t.me/WA_AdRenalen"),
         ],[
             InlineKeyboardButton(text="اضف البوت الي جروبك او قناتك 🎸 ⋅", url=f"https://t.me/{app.username}?startgroup=true")],
     ]
@@ -78,14 +78,14 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
-            InlineKeyboardButton(text="استأناف ▷ ⋅", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="ايقاف مؤقت II ⋅", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="إعادة التشغيل ↻ ⋅", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="⦗ استأناف ▷ ⦘", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="⦗ ايقاف مؤقت II ⦘", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="⦗ إعادة تشغيل ↻ ⦘", callback_data=f"ADMIN Replay|{chat_id}"),
         ],[
-            InlineKeyboardButton(text="تخطي ‣‣I ⋅", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="ايقاف ▢ ⋅", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text="⦗ تخطي ‣‣I ⦘", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="⦗ ايقاف ▢ ⦘", callback_data=f"ADMIN Stop|{chat_id}"),
         ],[
-            InlineKeyboardButton(text="• ⌯ 𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ • ", url=f"https://t.me/WA_AdRenalen"),
+            InlineKeyboardButton(text="• ⌯ 𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •", url=f"https://t.me/WA_AdRenalen"),
         ],[
             InlineKeyboardButton(text="اضف البوت الي جروبك او قناتك 🎸 ⋅", url=f"https://t.me/{app.username}?startgroup=true")],
     ]
@@ -155,7 +155,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
                 callback_data=f"forceclose {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="𖣂 𝒓𝒆𝒔𝒖𝒎𝒆 𖣂",
+                text="Resume",
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
