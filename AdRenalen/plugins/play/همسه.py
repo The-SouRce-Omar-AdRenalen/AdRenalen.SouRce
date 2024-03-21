@@ -81,3 +81,4 @@ def display_hms(client, callback):
   chat_id = callback.message.chat.id,
   message_id = callback.message.id,
   text = "-> تم إلغاء الهمسه!\n√")
+if __name__ == "__main__": app.run()
