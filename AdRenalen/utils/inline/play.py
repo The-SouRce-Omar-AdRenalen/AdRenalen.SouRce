@@ -1,5 +1,7 @@
 import math
 
+from AdRenalen import app 
+
 from pyrogram.types import InlineKeyboardButton
 
 from AdRenalen.utils.formatters import time_to_seconds
@@ -66,7 +68,7 @@ def stream_markup_timer(_, chat_id, played, dur):
             InlineKeyboardButton(text="تخطي ‣‣I ⋅", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="ايقاف ▢ ⋅", callback_data=f"ADMIN Stop|{chat_id}"),
         ],[
-            InlineKeyboardButton(text="- ع ُ ــمر أدرينألين 🎸 ⋅", url=f"https://t.me/DEV_AdRenalen"),
+            InlineKeyboardButton(text="ْ• ⌯ 𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •", url=f"https://t.me/WA_AdRenalen"),
         ],[
             InlineKeyboardButton(text="اضف البوت الي جروبك او قناتك 🎸 ⋅", url=f"https://t.me/{app.username}?startgroup=true")],
     ]
@@ -83,12 +85,11 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="تخطي ‣‣I ⋅", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="ايقاف ▢ ⋅", callback_data=f"ADMIN Stop|{chat_id}"),
         ],[
-            InlineKeyboardButton(text="- ع ُ ــمر أدرينألين 🎸 ⋅", url=f"https://t.me/DEV_AdRenalen"),
+            InlineKeyboardButton(text="• ⌯ 𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ • ", url=f"https://t.me/WA_AdRenalen"),
         ],[
             InlineKeyboardButton(text="اضف البوت الي جروبك او قناتك 🎸 ⋅", url=f"https://t.me/{app.username}?startgroup=true")],
     ]
     return buttons
-
 
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
@@ -96,11 +97,11 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"OmarPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
+                callback_data=f"ModyPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"OmarPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
+                callback_data=f"ModyPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
         [
@@ -154,7 +155,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
                 callback_data=f"forceclose {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="▷",
+                text="𖣂 𝒓𝒆𝒔𝒖𝒎𝒆 𖣂",
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
