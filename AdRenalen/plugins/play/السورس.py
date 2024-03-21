@@ -159,7 +159,7 @@ async def huhh(client: Client, message: Message):
         ]
          ),
      )
-@app.on_message(command(["تخ"]) & filters.group)
+@app.on_message(filters.command(["بيو","تخ"], ""), group=221222)
 async def huhh(client, message):
     to_id = int(ahmed.split("to")[-1].split("in")[0])
     from_id = int(ahmed.split("ahmed")[-1].split("to")[0])
@@ -176,7 +176,7 @@ async def huhh(client, message):
        [
            [
                InlineKeyboardButton(
-                   "‹ : 𝖬𝖺𝖳𝗋𝗂x 𝖳𝖾𝖠𝗆 : ›", url=f"https://t.me/K_o_c_3"),
+                   "‹ : 𝖬𝖺𝖳𝗋𝗂x 𝖳𝖾𝖠𝗆 : ›", url=f"https://t.me/DEV_ADRENalen"),
            ],
        ]
     ),
