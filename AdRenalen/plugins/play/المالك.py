@@ -40,7 +40,7 @@ async def ownner(client: Client, message: Message):
 
 
 
-@app.on_message(filters.command(["اسمي","اسمي اي], ""), group=123222)
+@app.on_message(filters.command(["اسمي","اسمي اي"], ""), group=123222)
 async def vgdg(client: Client, message: Message):
     await message.reply_text(
         f"""- اسمك » ⦗ {message.from_user.mention} ⦘ 💘 ⋅""") 
