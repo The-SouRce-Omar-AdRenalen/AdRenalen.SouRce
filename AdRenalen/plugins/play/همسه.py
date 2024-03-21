@@ -39,7 +39,7 @@ async def send_hms(client, message):
         from_id = int(hms_ids.split("hms")[-1].split("to")[0])
         in_id = int(hms_ids.split("in")[-1])
         to_url = f"tg://openmessage?user_id={to_id}"
-        from_url = f"tg://openmessage?user_id={from_id}"
+        from_url = f"tg://openmessage?user_id={from_id}"{
         
         hmses[str(to_id)] = {"hms": message.text, "bar": in_id}
         
@@ -47,11 +47,16 @@ async def send_hms(client, message):
         
         await app.send_message(
     chat_id=in_id,
-    text=f"المستخدم ⦗ {user.mention} ⦘ 😂💘 ⋅\nلديك همسة من البني آدم دا\n⦗ {message.from_user.mention} ⦘ 😂💘 ⋅ \n انتا فقط من يستطيع رئية الهمسه ♥️",
+    text=f"هناك همسه جديدة استعمل الازرار لرؤية الهمسه ♥️!",
     reply_markup=InlineKeyboardMarkup(
-        [[InlineKeyboardButton("- اضغط لرؤية الهمسة 👀", callback_data="hms_answer")]]
-    ),
-)
+        [InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={to_id}"),
+InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={from_id}"), 
+                 ],[
+InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
+               ]
+            ]
+         ),
+     )
         
         waiting_for_hms = False
      
