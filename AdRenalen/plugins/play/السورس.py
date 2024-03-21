@@ -3,6 +3,7 @@
 #𝚂𝚄𝙿𝙿𝙾𝚁𝚃 : @BAR_ADRENALEN
 #Omar AdRenalen تم التعديل بواسطة 🎸 ⋅
 import asyncio
+from asyncio import gather
 import os
 import time
 import requests
@@ -17,6 +18,8 @@ from AdRenalen import app
 from telegraph import upload_file
 from asyncio import gather
 from pyrogram.errors import FloodWait
+
+
 ##############################################################
 ##############################################################
 @app.on_message(filters.command(["سورس","السورس,","مصنع","صانع","مطور,","مطور السورس","المطور"], ""), group=221212)
@@ -180,6 +183,14 @@ async def huhh(client, message):
            ],
        ]
     ),
+    
+    
+    
+@app.on_message(filters.command(["اسمي","اسمي اي","قول اسمي"], ""), group=123222)
+async def vgdg(client: Client, message: Message):
+    await message.reply_text(
+        f"""- اسمك » ⦗ {message.from_user.mention} ⦘ 💘 ⋅""") 
+
 ##############################################################
 ##############################################################
 ##############################################################
