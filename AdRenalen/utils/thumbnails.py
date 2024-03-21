@@ -33,7 +33,7 @@ async def get_thumb(videoid):
     if os.path.isfile(f"cache/{videoid}.png"):
         return f"cache/{videoid}.png"
 
-    url = f"https://telegra.ph/file/6b073b212869b5630968f.jpg"
+    url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
         for result in (await results.next())["result"]:
