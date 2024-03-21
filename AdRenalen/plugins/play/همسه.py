@@ -1,9 +1,8 @@
+import os
+from config import *
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-import os
 from AdRenalen import app
-from config import *
-
 
 
 hmses = {}
@@ -22,8 +21,8 @@ def reply_with_link(client, message):
     message.reply_text("\n╢ إضغط لإرسال همسه!\n", reply_markup=reply_markup)
 
 waiting_for_hms = False
-@app.on_message(filters.command("start"))
-def hms_start(client, message):
+@app.on_message(filters.command("start"), group=89)
+async def hms_start(client, message):
   
   if message.text.split(" ", 1)[-1].startswith("hms"):
     global waiting_for_hms, hms_ids
@@ -37,8 +36,7 @@ def hms_start(client, message):
     )
 
 @app.on_message(filters.private & filters.text & ~filters.command("start"))
-def send_hms(client, message):
-  
+async def send_hms(client, message): 
   global waiting_for_hms
   if waiting_for_hms:    
     to_id = int(hms_ids.split("to")[-1].split("in")[0])
@@ -81,4 +79,6 @@ def display_hms(client, callback):
   chat_id = callback.message.chat.id,
   message_id = callback.message.id,
   text = "-> تم إلغاء الهمسه!\n√")
+  
 if __name__ == "__main__": app.run()
+
