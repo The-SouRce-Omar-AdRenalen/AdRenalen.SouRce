@@ -10,7 +10,7 @@ heroku3
 motor
 pillow
 psutil
-pip install pytgcalls==3.0.0.dev24
+py-tgcalls==3.0.0.dev24
 pykeyboard
 pyrogram==2.0.106
 python-dotenv
