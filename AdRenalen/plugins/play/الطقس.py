@@ -11,9 +11,9 @@ from AdRenalen  import app
 @app.on_message(filters.regex(r"^(طقس)"))
 async def __(_: Client, message: Message):
     data = message.text.split(maxsplit=1)
-    if len(data) < 2: return await message.reply("- خطأ في البيانات.\n- طقس + المدينه", reply_to_message_id=message.id)
-    try: return await message.reply(_weather(data[1]), reply_to_message_id=message.id)
-    except KeyError: await message.reply("- City Not Found.", reply_to_message_id=message.id)
+    if len(data) < 2: return await message.reply("- خطأ في البيانات.\n- طقس + المدينه", reply_to_message_id)
+    try: return await message.reply(_weather(data[1]), reply_to_message_id)
+    except KeyError: await message.reply("- City Not Found.", reply_to_message_id)
 
 def _weather(query):
     params = {
@@ -29,5 +29,3 @@ def _weather(query):
     humidity = f"- humidity: {response[ main ][ humidity ]}"
     caption = f"{name}{weather}{temp}{wind}{humidity}"
     return caption
-
-if __name__ == "__main__": app.run()
