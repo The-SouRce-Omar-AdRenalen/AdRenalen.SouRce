@@ -4,10 +4,11 @@ from pyrogram.enums import ChatMembersFilter
 from pyrogram import enums
 import json
 from pyrogram import Client, filters
+DEVELOPERS = [1924832439]
+OWNER_BOT = 1924832439
 
 
-
-@app.on_message(filters.command(["تفعيل"], ""),group=221232)
+@app.on_message(filters.command("تفعيل", ""))
 def update_owners(client, message):
     chat_id = str(message.chat.id)
     Toom = message.from_user
