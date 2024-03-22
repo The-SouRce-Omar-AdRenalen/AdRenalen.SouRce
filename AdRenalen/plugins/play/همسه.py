@@ -26,10 +26,9 @@ async def hms_start(client, message):
         waiting_for_hms = True
         await message.reply_text(
             "- ارسل الهمسه الان💘 ⋅",
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("‹ الغاء الهمسه 💘 ›", callback_data="hms_cancel")]]
-            ),
-        )
+            reply_markup = InlineKeyboardMarkup ([[
+        InlineKeyboardButton ("‹ الغاء الهمسه 💘 ›",, callback_data="hms_cancel")
+      ]])
 
 @app.on_message(filters.private & filters.text & ~filters.command("start"), group=88)
 async def send_hms(client, message):
@@ -51,7 +50,7 @@ async def send_hms(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›"", url=f"{to_url}"), 
+                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", url=f"{to_url}"), 
                 ],[
                     InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url=f"{from_url}"), 
                     InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
