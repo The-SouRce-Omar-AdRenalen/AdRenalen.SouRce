@@ -39,7 +39,7 @@ async def send_hms(client, message):
         from_id = int(hms_ids.split("hms")[-1].split("to")[0])
         in_id = int(hms_ids.split("in")[-1])
         to_url = f"tg://openmessage?user_id={to_id}"
-        from_url = f"tg://openmessage?user_id={from_id}"{
+        from_url = f"tg://openmessage?user_id={from_id}"
         
         hmses[str(to_id)] = {"hms": message.text, "bar": in_id}
         
