@@ -7,7 +7,7 @@ from pyrogram import Client, filters
 
 
 
-@app.on_message(filters.command("تفعيل", ""))
+@app.on_message(filters.command(["تفعيل"], ""),group=221232)
 def update_owners(client, message):
     chat_id = str(message.chat.id)
     Toom = message.from_user
