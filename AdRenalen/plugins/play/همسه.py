@@ -51,10 +51,10 @@ async def send_hms(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", url="{tg://openmessage?user_id={to_id}"),
+                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", callback_data"{tg://openmessage?user_id={to_id}"),
                 ],[
-                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url="{tg://openmessage?user_id={from_id}"), 
-                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", url="hms_answer"),
+                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", callback_data"{tg://openmessage?user_id={from_id}"), 
+                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data"hms_answer"),
                 ],[
                     InlineKeyboardButton(
                         "‹ 𝐂𝐇.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/WA_ADRENALEN"),
@@ -79,7 +79,7 @@ async def display_hms(client, callback):
         
 @app.on_callback_query(filters.regex("hms_cancel"))
 async def cancel_hms(client, callback):
-    print("Inside hms_cancel function")
+    print("Inside cancel_hms function")
     global waiting_for_hms
     waiting_for_hms = False
     
