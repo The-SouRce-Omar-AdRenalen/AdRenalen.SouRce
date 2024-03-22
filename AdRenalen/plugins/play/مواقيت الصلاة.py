@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from datetime import datetime
 from pytz import timezone
-from config import 
+from config import *
 from AdRenalen  import app 
 zone = timezone("Africa/Cairo")
 
