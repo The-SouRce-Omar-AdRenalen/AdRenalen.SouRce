@@ -51,10 +51,10 @@ async def send_hms(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", callback_data"{tg://openmessage?user_id={to_id}"),
+                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={to_id}"),
                 ],[
-                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", callback_data"{tg://openmessage?user_id={from_id}"), 
-                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data"hms_answer"),
+                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={from_id}"), 
+                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
                 ],[
                     InlineKeyboardButton(
                         "‹ 𝐂𝐇.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/WA_ADRENALEN"),
