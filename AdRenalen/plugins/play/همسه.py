@@ -49,11 +49,11 @@ async def send_hms(client, message):
     chat_id=in_id,
     text=f"هناك همسه جديدة استعمل الازرار لرؤية الهمسه ♥️!",
     reply_markup=InlineKeyboardMarkup(
+            [
         [InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={to_id}"),
 InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={from_id}"), 
                  ],[
 InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
-               ]
             ]
          ),
      )
