@@ -24,7 +24,7 @@ async def hms_start(client, message):
         global waiting_for_hms, hms_ids
         hms_ids = message.text
         waiting_for_hms = True
-await message.reply_text(
+        await message.reply_text(
             "- ارسل الهمسه الان💘 ⋅",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("‹ الغاء الهمسه 💘 ›", callback_data="hms_cancel")]]
