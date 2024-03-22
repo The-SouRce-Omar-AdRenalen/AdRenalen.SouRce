@@ -32,7 +32,7 @@ async def hms_start(client, message):
         )
 
 @app.on_message(filters.private & filters.text & ~filters.command("start"), group=88)
-async def reply_send_hms(client, message):
+async def send_hms(client, message):
     global waiting_for_hms
     if waiting_for_hms:
         to_id = int(hms_ids.split("to")[-1].split("in")[0])
