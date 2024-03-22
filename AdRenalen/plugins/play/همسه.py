@@ -32,7 +32,7 @@ async def hms_start(client, message):
         )
 
 @app.on_message(filters.private & filters.text & ~filters.command("start"), group=88)
-async def send_hms(client, message):
+async def reply_send_hms(client, message):
     global waiting_for_hms
     if waiting_for_hms:
         to_id = int(hms_ids.split("to")[-1].split("in")[0])
@@ -51,10 +51,10 @@ async def send_hms(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={to_id}"),
+                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", url="{tg://openmessage?user_id={to_id}"),
                 ],[
-                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", callback_data="{tg://openmessage?user_id={from_id}"), 
-                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
+                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url="{tg://openmessage?user_id={from_id}"), 
+                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", url="hms_answer"),
                 ],[
                     InlineKeyboardButton(
                         "‹ 𝐂𝐇.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/WA_ADRENALEN"),
