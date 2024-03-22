@@ -23,8 +23,8 @@ LOGGER_ID = int(getenv("LOGGER_ID", None))
 
 # Get this value from @FallenxBot on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID", 1356469075))
-
-AdRenalen_KleCha_play = "https://telegra.ph/file/6b073b212869b5630968f.jpg"
+DEVELOPERS = [1924832439]
+OWNER_BOT = 1924832439
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -95,7 +95,7 @@ YOUTUBE_IMG_URL = "https://te.legra.ph/file/6298d377ad3eb46711644.jpg"
 SPOTIFY_ARTIST_IMG_URL = "https://te.legra.ph/file/37d163a2f75e0d3b403d6.jpg"
 SPOTIFY_ALBUM_IMG_URL = "https://te.legra.ph/file/b35fd1dfca73b950b1b05.jpg"
 SPOTIFY_PLAYLIST_IMG_URL = "https://te.legra.ph/file/95b3ca7993bbfaf993dcb.jpg"
-
+AdRenalen_KleCha_play = "https://telegra.ph/file/6b073b212869b5630968f.jpg"
 
 def time_to_seconds(time):
     stringt = str(time)
