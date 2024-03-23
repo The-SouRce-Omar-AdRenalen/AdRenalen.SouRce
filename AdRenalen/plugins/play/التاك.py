@@ -42,7 +42,7 @@ async def nummmm(client: app, message):
       if not x.user.is_deleted:
        i += 1
        txt += f" {x.user.mention} ›"
-       if i == 45:
+       if i == 40:
         try:
               if not message.photo:
                     await client.send_message(message.chat.id, f"{zz}\n{txt}")
