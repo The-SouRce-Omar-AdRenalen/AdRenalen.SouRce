@@ -53,7 +53,7 @@ async def nummmm(client: app, message):
               await asyncio.sleep(2)
         except FloodWait as e:
                     flood_time = int(e.x)
-                    if flood_time > 300:
+                    if flood_time > 250:
                         continue
                     await asyncio.sleep(flood_time)
         except Exception:
