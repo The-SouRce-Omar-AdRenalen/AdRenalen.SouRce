@@ -33,7 +33,7 @@ async def get_thumb(videoid):
     if os.path.isfile(f"https://telegra.ph/file/6b073b212869b5630968f.jpg"):
         return f"https://telegra.ph/file/6b073b212869b5630968f.jpg"
 
-    url = f"https://www.youtube.com/watch?v={videoid}"
+    url = f"https://d.top4top.io/m_30038easz0.mp4}"
     try:
         results = VideosSearch(url, limit=1)
         for result in (await results.next())["result"]:
@@ -64,7 +64,7 @@ async def get_thumb(videoid):
                     await f.write(await resp.read())
                     await f.close()
 
-        youtube = Image.open(f"https://telegra.ph/file/6b073b212869b5630968f.jpg")
+        youtube = Image.open(f"https://d.top4top.io/m_30038easz0.mp4")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(10))
