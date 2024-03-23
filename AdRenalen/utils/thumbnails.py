@@ -33,7 +33,7 @@ async def get_thumb(videoid):
     if os.path.isfile(f"https://telegra.ph/file/6b073b212869b5630968f.jpg"):
         return f"https://telegra.ph/file/6b073b212869b5630968f.jpg"
 
-    url = f"https://d.top4top.io/m_30038easz0.mp4}"
+    url = f"https://d.top4top.io/m_30038easz0.mp4"
     try:
         results = VideosSearch(url, limit=1)
         for result in (await results.next())["result"]:
@@ -60,7 +60,7 @@ async def get_thumb(videoid):
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
                 if resp.status == 200:
-                    f = await aiofiles.open(f"https://www.youtube.com/watch?v={videoid}", mode="wb")
+                    f = await aiofiles.open(f"https://d.top4top.io/m_30038easz0.mp4", mode="wb")
                     await f.write(await resp.read())
                     await f.close()
 
