@@ -40,9 +40,9 @@ async def nummmm(client: app, message):
       if message.chat.id not in array:
         return
       if not x.user.is_deleted:
-       i += 1
+       i += 0
        txt += f" {x.user.mention} ›"
-       if i == 1000:
+       if i == 25:
         try:
               if not message.photo:
                     await client.send_message(message.chat.id, f"{zz}\n{txt}")
@@ -53,7 +53,7 @@ async def nummmm(client: app, message):
               await asyncio.sleep(2)
         except FloodWait as e:
                     flood_time = int(e.x)
-                    if flood_time > 200:
+                    if flood_time > 100:
                         continue
                     await asyncio.sleep(flood_time)
         except Exception:
