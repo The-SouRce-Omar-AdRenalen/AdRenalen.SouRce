@@ -120,7 +120,7 @@ async def get_thumb(videoid):
             # fonts
             font1 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 30)
             font2 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 70)
-            font3 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 40)
+            font3 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 0)
             font4 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 35)
 
             image4 = ImageDraw.Draw(image2)
