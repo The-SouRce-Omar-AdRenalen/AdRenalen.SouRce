@@ -1,4 +1,3 @@
-
 import asyncio
 import os
 import random
@@ -87,7 +86,7 @@ async def get_thumb(videoid):
             background = enhancer.enhance(0.6)
             image2 = background
 
-            circle = Image.open("AdRenalen/assets/AdRenalen.mp4")
+            circle = Image.open("AdRenalen/assets/Omar.png")
 
             # changing circle color
             im = circle
@@ -124,7 +123,7 @@ async def get_thumb(videoid):
 
             image4 = ImageDraw.Draw(image2)
             image4.text(
-                (10, 10), " ", fill="white", font=font1, align="center"
+                (10, 10), "SourceToxiC ", fill="white", font=font1, align="center"
             )
             image4.text(
                 (670, 150),
