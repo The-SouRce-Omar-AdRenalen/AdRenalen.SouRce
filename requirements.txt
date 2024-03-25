@@ -17,6 +17,7 @@ python-dotenv
 pyyaml
 requests
 numpy
+enums
 telegraph
 speedtest-cli
 spotipy
