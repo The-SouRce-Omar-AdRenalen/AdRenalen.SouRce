@@ -87,7 +87,7 @@ async def get_thumb(videoid):
             background = enhancer.enhance(0.6)
             image2 = background
 
-            circle = Image.open config import YOUTUBE_IMG_URL
+            circle = "https://telegra.ph/file/a982187bd0641ac430c78.jpg")
 
             # changing circle color
             im = circle
