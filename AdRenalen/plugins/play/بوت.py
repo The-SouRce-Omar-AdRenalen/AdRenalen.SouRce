@@ -1,5 +1,7 @@
 import asyncio
 import random
+from pyrogram import enums
+from pyrogram import types
 from AdRenalen.misc import SUDOERS
 from pyrogram.types import (Message,InlineKeyboardButton,InlineKeyboardMarkup,CallbackQuery,ChatPrivileges)
 from pyrogram import filters, Client
