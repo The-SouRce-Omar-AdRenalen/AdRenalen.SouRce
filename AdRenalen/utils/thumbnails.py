@@ -125,7 +125,7 @@ async def get_thumb(videoid):
 
             image4 = ImageDraw.Draw(image2)
             image4.text(
-                (5, 5), "SourceToxiC ", fill="black", font=font1, align="center"
+                (5, 5), "SourceToxiC ", fill="white", font=font1, align="center"
             )
             image4.text(
                 (670, 150),
