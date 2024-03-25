@@ -125,7 +125,7 @@ async def get_thumb(videoid):
 
             image4 = ImageDraw.Draw(image2)
             image4.text(
-                (10, 10), "SourceToxiC ", fill="white", font=font1, align="left"
+                (10, 10), "SourceToxiC ", fill="white", font=font1, align="center"
             )
             image4.text(
                 (670, 150),
@@ -134,7 +134,7 @@ async def get_thumb(videoid):
                 font=font2,
                 stroke_width=4,
                 stroke_fill="white",
-                align="left",
+                align="center",
             )
 
             # title
@@ -146,7 +146,7 @@ async def get_thumb(videoid):
                 stroke_width=1,
                 stroke_fill="white",
                 font=font3,
-                align="left",
+                align="center",
             )
             image4.text(
                 (670, 350),
@@ -155,7 +155,7 @@ async def get_thumb(videoid):
                 stroke_width=1,
                 stroke_fill="white",
                 font=font3,
-                align="left",
+                align="center",
             )
 
             # description
@@ -163,12 +163,12 @@ async def get_thumb(videoid):
             duration = f"Duration : {duration} Mins"
             channel = f"Channel : @SourceToxiC"
 
-            image4.text((670, 450), text=views, fill="white", font=font4, align="left")
+            image4.text((670, 450), text=views, fill="white", font=font4, align="center")
             image4.text(
-                (670, 500), text=duration, fill="white", font=font4, align="left"
+                (670, 500), text=duration, fill="white", font=font4, align="center"
             )
             image4.text(
-                (670, 550), text=channel, fill="white", font=font4, align="left"
+                (670, 550), text=channel, fill="white", font=font4, align="center"
             )
 
             image2 = ImageOps.expand(image2, border=0, fill=make_col())
