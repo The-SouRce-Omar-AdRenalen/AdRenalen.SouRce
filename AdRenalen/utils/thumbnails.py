@@ -84,7 +84,7 @@ async def get_thumb(videoid):
             image2 = image1.convert("RGBA")
             background = image2.filter(filter=ImageFilter.BoxBlur(30))
             enhancer = ImageEnhance.Brightness(background)
-            background = enhancer.enhance(0.6)
+            background = enhancer.enhance(0)
             image2 = background
 
             circle = Image.open("AdRenalen/assets/Omar.png")
