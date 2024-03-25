@@ -89,21 +89,6 @@ async def get_thumb(videoid):
 
             circle = Image.open("AdRenalen/assets/Omar.png")
 
-            # changing circle color
-            im = circle
-            im = im.convert("RGBA")
-            color = make_col()
-
-            data = np.array(im)
-            black, lead, blue, alpha = data.T
-
-            white_areas = (black == 255) & (blue == 255) & (lead == 255)
-            data[..., :-1][white_areas.T] = color
-
-            im2 = Image.fromarray(data)
-            circle = im2
-            # done
-
             image3 = image1.crop((280, 0, 1000, 720))
             lum_img = Image.new("L", [720, 720], 0)
             draw = ImageDraw.Draw(lum_img)
