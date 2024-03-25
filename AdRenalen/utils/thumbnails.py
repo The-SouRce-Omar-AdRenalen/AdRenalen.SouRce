@@ -86,8 +86,22 @@ async def get_thumb(videoid):
             background = enhancer.enhance(0.6)
             image2 = background
 
-            polygon = Image.open("AdRenalen/assets/Omar.png")
+            circle = Image.open("AdRenalen/assets/Omar.png")
 
+            # changing circle color
+            im = circle
+            im = im.convert("RGBA")
+            color = make_col()
+
+            data = np.array(im)
+            black, lead, blue, alpha = data.T
+
+            white_areas = (black == 255) & (blue == 255) & (lead == 255)
+            data[..., :-1][white_areas.T] = color
+
+            im2 = Image.fromarray(data)
+            circle = im2
+            # done
 
             image3 = image1.crop((280, 0, 1000, 720))
             lum_img = Image.new("L", [720, 720], 0)
@@ -100,24 +114,37 @@ async def get_thumb(videoid):
             image3 = image3.resize((600, 600))
 
             image2.paste(image3, (50, 70), mask=image3)
-            image2.paste(polygon, (0, 0), mask=polygon)
+            image2.paste(circle, (0, 0), mask=circle)
 
             # fonts
             font1 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 30)
             font2 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 70)
+            font3 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 40)
             font4 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 35)
 
             image4 = ImageDraw.Draw(image2)
             image4.text(
-                (10, 10), "AFROTOO MUSIC ", fill="white", font=font1, align="left"
+                (10, 10), "SourceToxiC ", fill="white", font=font1, align="left"
             )
             image4.text(
                 (670, 150),
-                " ",
+                "SourceToxiC",
                 fill="white",
                 font=font2,
                 stroke_width=4,
                 stroke_fill="white",
+                align="left",
+            )
+
+            # title
+            title1 = truncate(title)
+            image4.text(
+                (670, 300),
+                text=title1[0],
+                fill="white",
+                stroke_width=1,
+                stroke_fill="white",
+                font=font3,
                 align="left",
             )
             image4.text(
@@ -131,9 +158,9 @@ async def get_thumb(videoid):
             )
 
             # description
-            views = f" "
-            duration = f" "
-            channel = f" "
+            views = f"Views : {views}"
+            duration = f"Duration : {duration} Mins"
+            channel = f"Channel : @SourceToxiC"
 
             image4.text((670, 450), text=views, fill="white", font=font4, align="left")
             image4.text(
