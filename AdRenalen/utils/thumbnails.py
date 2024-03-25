@@ -129,7 +129,7 @@ async def get_thumb(videoid):
             )
             image4.text(
                 (670, 150),
-                "SourceToxiC",
+                "",
                 fill="white",
                 font=font2,
                 stroke_width=4,
@@ -140,7 +140,7 @@ async def get_thumb(videoid):
             # title
             title1 = truncate(title)
             image4.text(
-                (670, 300),
+                (0, 0),
                 text=title1[0],
                 fill="white",
                 stroke_width=1,
@@ -159,9 +159,9 @@ async def get_thumb(videoid):
             )
 
             # description
-            views = f"Views : {views}"
-            duration = f"Duration : {duration} Mins"
-            channel = f"Channel : @SourceToxiC"
+            views = f" "
+            duration = f" "
+            channel = f" "
 
             image4.text((670, 450), text=views, fill="white", font=font4, align="center")
             image4.text(
