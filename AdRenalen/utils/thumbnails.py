@@ -163,12 +163,12 @@ async def get_thumb(videoid):
             duration = f"Duration : {duration} Mins"
             channel = f"Channel : @SourceToxiC"
 
-            image4.text((670, 450), text=views, fill="white", font=font4, align="left")
+            image4.text((670, 450), text=views, fill="white", font=font4, align="right")
             image4.text(
-                (670, 500), text=duration, fill="white", font=font4, align="left"
+                (670, 500), text=duration, fill="white", font=font4, align="right"
             )
             image4.text(
-                (670, 550), text=channel, fill="white", font=font4, align="left"
+                (670, 550), text=channel, fill="white", font=font4, align="right"
             )
 
             image2 = ImageOps.expand(image2, border=0, fill=make_col())
