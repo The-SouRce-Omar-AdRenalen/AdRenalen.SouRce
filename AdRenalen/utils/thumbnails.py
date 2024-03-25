@@ -140,7 +140,7 @@ async def get_thumb(videoid):
             # title
             title1 = truncate(title)
             image4.text(
-                (0, 0),
+                (670, 300),
                 text=title1[0],
                 fill="white",
                 stroke_width=1,
