@@ -120,8 +120,6 @@ async def get_thumb(videoid):
                 stroke_fill="white",
                 align="left",
             )
-
-            )
             image4.text(
                 (670, 350),
                 text=title1[1],
