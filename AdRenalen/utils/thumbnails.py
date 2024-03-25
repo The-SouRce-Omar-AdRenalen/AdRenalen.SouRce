@@ -87,7 +87,7 @@ async def get_thumb(videoid):
             background = enhancer.enhance(0.6)
             image2 = background
 
-            circle = Image.open("AdRenalen/assets/Omar.mp4")
+            circle = Image.open("app/config/YOUTUBE_IMG_URL")
 
             # changing circle color
             im = circle
