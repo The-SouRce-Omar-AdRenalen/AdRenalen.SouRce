@@ -119,16 +119,16 @@ async def get_thumb(videoid):
             # fonts
             font1 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 30)
             font2 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 70)
-            font3 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 40)
+            
             font4 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 35)
 
             image4 = ImageDraw.Draw(image2)
             image4.text(
-                (10, 10), "SourceToxiC ", fill="white", font=font1, align="left"
+                (10, 10), "The.SuoRce.AdRenalen", fill="white", font=font1, align="left"
             )
             image4.text(
                 (670, 150),
-                "SourceToxiC",
+                "",
                 fill="white",
                 font=font2,
                 stroke_width=4,
@@ -136,31 +136,12 @@ async def get_thumb(videoid):
                 align="left",
             )
 
-            # title
-            title1 = truncate(title)
-            image4.text(
-                (670, 300),
-                text=title1[0],
-                fill="white",
-                stroke_width=1,
-                stroke_fill="white",
-                font=font3,
-                align="left",
-            )
-            image4.text(
-                (670, 350),
-                text=title1[1],
-                fill="white",
-                stroke_width=1,
-                stroke_fill="white",
-                font=font3,
-                align="left",
-            )
+            
 
             # description
-            views = f"Views : {views}"
-            duration = f"Duration : {duration} Mins"
-            channel = f"Channel : @SourceToxiC"
+            views = f" "
+            duration = f" "
+            channel = f" "
 
             image4.text((670, 450), text=views, fill="white", font=font4, align="left")
             image4.text(
