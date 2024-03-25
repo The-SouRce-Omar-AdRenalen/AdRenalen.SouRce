@@ -1,19 +1,23 @@
-import asyncio
+#
+# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
+#
+# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
+# and is released under the "GNU v3.0 License Agreement".
+# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
+#
+# All rights reserved.
+
 import os
-import random
 import re
 import textwrap
+
 import aiofiles
 import aiohttp
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
+from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
+                 ImageFont, ImageOps)
 from youtubesearchpython.__future__ import VideosSearch
-import numpy as np
 
-from config import YOUTUBE_IMG_URL
-
-
-def make_col():
-    return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -25,135 +29,122 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 
-def truncate(text):
-    list = text.split(" ")
-    text1 = ""
-    text2 = ""
-    for i in list:
-        if len(text1) + len(i) < 30:
-            text1 += " " + i
-        elif len(text2) + len(i) < 30:
-            text2 += " " + i
+async def gen_thumb(videoid):
+    if os.path.isfile(f"cache/{videoid}.png"):
+        return f"cache/{videoid}.png"
 
-    text1 = text1.strip()
-    text2 = text2.strip()
-    return [text1, text2]
-
-
-async def get_thumb(videoid):
+    url = f"https://www.youtube.com/watch?v={videoid}"
     try:
-        if os.path.isfile(f"cache/{videoid}.jpg"):
-            return f"cache/{videoid}.jpg"
+        results = VideosSearch(url, limit=1)
+        for result in (await results.next())["result"]:
+            try:
+                title = result["title"]
+                title = re.sub("\W+", " ", title)
+                title = title.title()
+            except:
+                title = "Unsupported Title"
+            try:
+                duration = result["duration"]
+            except:
+                duration = "Unknown Mins"
+            thumbnail = result["thumbnails"][0]["url"].split("?")[0]
+            try:
+                views = result["viewCount"]["short"]
+            except:
+                views = "Unknown Views"
+            try:
+                channel = result["channel"]["name"]
+            except:
+                channel = "Unknown Channel"
 
-        url = f"https://www.youtube.com/watch?v={videoid}"
-        if 1 == 1:
-            results = VideosSearch(url, limit=1)
-            for result in (await results.next())["result"]:
-                try:
-                    title = result["title"]
-                    title = re.sub("\W+", " ", title)
-                    title = title.title()
-                except:
-                    title = "Unsupported Title"
-                try:
-                    duration = result["duration"]
-                except:
-                    duration = "Unknown Mins"
-                thumbnail = result["thumbnails"][0]["url"].split("?")[0]
-                try:
-                    views = result["viewCount"]["short"]
-                except:
-                    views = "Unknown Views"
-                try:
-                    channel = result["channel"]["name"]
-                except:
-                    channel = "Unknown Channel"
+        async with aiohttp.ClientSession() as session:
+            async with session.get(thumbnail) as resp:
+                if resp.status == 200:
+                    f = await aiofiles.open(
+                        f"cache/thumb{videoid}.png", mode="wb"
+                    )
+                    await f.write(await resp.read())
+                    await f.close()
 
-            async with aiohttp.ClientSession() as session:
-                async with session.get(
-                    f"http://img.youtube.com/vi/{videoid}/maxresdefault.jpg"
-                ) as resp:
-                    if resp.status == 200:
-                        f = await aiofiles.open(f"cache/thumb{videoid}.jpg", mode="wb")
-                        await f.write(await resp.read())
-                        await f.close()
+        youtube = Image.open(f"cache/thumb{videoid}.png")
+        image1 = changeImageSize(1280, 720, youtube)
+        image2 = image1.convert("RGBA")
+        background = image2.filter(filter=ImageFilter.BoxBlur(30))
+        enhancer = ImageEnhance.Brightness(background)
+        background = enhancer.enhance(0.6)
+        Xcenter = youtube.width / 2
+        Ycenter = youtube.height / 2
+        x1 = Xcenter - 250
+        y1 = Ycenter - 250
+        x2 = Xcenter + 250
+        y2 = Ycenter + 250
+        logo = youtube.crop((x1, y1, x2, y2))
+        logo.thumbnail((520, 520), Image.ANTIALIAS)
+        logo = ImageOps.expand(logo, border=15, fill="white")
+        background.paste(logo, (5, 720))
+        draw = ImageDraw.Draw("AdRenalen/assets/Omar.png")
+        font = ImageFont.truetype("AdRenalen/assets/font2.ttf", 40)
+        font2 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 70)
+        arial = ImageFont.truetype("AdRenalen/assets/font2.ttf", 30)
+        name_font = ImageFont.truetype("AdRenalen/assets/font.ttf", 30)
+        para = textwrap.wrap(title, width=32)
+        j = 0
+        draw.text(
+            (5, 5), "𝗠𝘂𝘀𝗶𝗰 ♪", fill="white", font=name_font
+        )
+        draw.text(
+            (366, 150),
+            "𝙋𝙡𝙖𝙮𝙞𝙣𝙜 𝙉𝙤𝙬",
+            fill="black",
+            stroke_width=2,
+            stroke_fill="black",
+            font=font2,
+        )
+        for line in para:
+            if j == 1:
+                j += 1
+                draw.text(
+                    (600, 340),
+                    f"{line}",
+                    fill="white",
+                    stroke_width=1,
+                    stroke_fill="white",
+                    font=font,
+                )
+            if j == 0:
+                j += 1
+                draw.text(
+                    (600, 280),
+                    f"{line}",
+                    fill="white",
+                    stroke_width=1,
+                    stroke_fill="white",
+                    font=font,
+                )
 
-            youtube = Image.open(f"cache/thumb{videoid}.jpg")
-            image1 = changeImageSize(1280, 720, youtube)
-            image2 = image1.convert("RGBA")
-            background = image2.filter(filter=ImageFilter.BoxBlur(30))
-            enhancer = ImageEnhance.Brightness(background)
-            background = enhancer.enhance(0.6)
-            image2 = background
-
-            circle = Image.open("AdRenalen/assets/Omar.png")
-
-            # changing circle color
-            im = circle
-            im = im.convert("RGBA")
-            color = make_col()
-
-            data = np.array(im)
-            black, lead, blue, alpha = data.T
-
-            white_areas = (black == 255) & (blue == 255) & (lead == 255)
-            data[..., :-1][white_areas.T] = color
-
-            im2 = Image.fromarray(data)
-            circle = im2
-            # done
-
-            image3 = image1.crop((280, 0, 1000, 720))
-            lum_img = Image.new("L", [720, 720], 0)
-            draw = ImageDraw.Draw(lum_img)
-            draw.pieslice([(0, 0), (720, 720)], 0, 360, fill=255, outline="white")
-            img_arr = np.array(image3)
-            lum_img_arr = np.array(lum_img)
-            final_img_arr = np.dstack((img_arr, lum_img_arr))
-            image3 = Image.fromarray(final_img_arr)
-            image3 = image3.resize((600, 600))
-
-            image2.paste(image3, (50, 70), mask=image3)
-            image2.paste(circle, (0, 0), mask=circle)
-
-            # fonts
-            font1 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 30)
-            font2 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 70)
-            font4 = ImageFont.truetype("AdRenalen/assets/font2.ttf", 35)
-
-            image4 = ImageDraw.Draw(image2)
-            image4.text(
-                (10, 10), "SourceToxiC ", fill="white", font=font1, align="center"
-            )
-            image4.text(
-                (670, 150),
-                "",
-                fill="white",
-                font=font2,
-                stroke_width=4,
-                stroke_fill="white",
-                align="center",
-            )
-
-            # description
-            views = f" "
-            duration = f" "
-            channel = f" "
-
-            image4.text((670, 450), text=views, fill="white", font=font4, align="center")
-            image4.text(
-                (670, 500), text=duration, fill="white", font=font4, align="center"
-            )
-            image4.text(
-                (670, 550), text=channel, fill="white", font=font4, align="center"
-            )
-
-            image2 = ImageOps.expand(image2, border=0, fill=make_col())
-            image2 = image2.convert("RGB")
-            image2.save(f"cache/{videoid}.jpg")
-            file = f"cache/{videoid}.jpg"
-            return file
-    except Exception as e:
-        print(e)
+        draw.text(
+            (600, 450),
+            f"𝙑𝙞𝙚𝙬𝙨 : {views[:23]}",
+            (255, 255, 255),
+            font=arial,
+        )
+        draw.text(
+            (600, 500),
+            f"𝘿𝙪𝙧𝙖𝙩𝙞𝙤𝙣 : {duration[:23]} Mins",
+            (255, 255, 255),
+            font=arial,
+        )
+        draw.text(
+            (600, 550),
+            f"𝘾𝙝𝙖𝙣𝙣𝙚𝙡 : {channel}",
+            (255, 255, 255),
+            font=arial,
+        )
+        try:
+            os.remove(f"cache/thumb{videoid}.png")
+        except:
+            pass
+        background.save(f"cache/{videoid}.png")
+        return f"cache/{videoid}.png"
+    except Exception:
         return YOUTUBE_IMG_URL
-
