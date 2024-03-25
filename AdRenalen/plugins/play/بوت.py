@@ -36,7 +36,7 @@ async def caesar_bot(client, message):
     bar = random.choice(caesar_responses).format(name=name)
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("خدني لجروبك والنبي🥺♥", url=f"https://t.me/{bot_username}?startgroup=True")]
-    ])
+    ]),parse_mode=enums.ParseMode.MARKDOWN)
     
     await message.reply_text(
         text=f"**[{bar}](https://t.me/{bot_username}?startgroup=True)**",
