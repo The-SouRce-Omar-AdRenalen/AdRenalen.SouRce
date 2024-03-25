@@ -87,7 +87,7 @@ async def get_thumb(videoid):
             background = enhancer.enhance(0.6)
             image2 = background
 
-            circle = ("https://telegra.ph/file/a982187bd0641ac430c78.jpg")
+            circle = Image.open("AdRenalen/assets/AdRenalen.mp4")
 
             # changing circle color
             im = circle
