@@ -87,7 +87,7 @@ async def get_thumb(videoid):
             background = enhancer.enhance(0.6)
             image2 = background
 
-            circle = Image.open("https://d.top4top.io/m_30038easz0.mp4")
+            circle = Image.open("AdRenalen/assets/Omar.png")
 
             # changing circle color
             im = circle
@@ -125,7 +125,7 @@ async def get_thumb(videoid):
 
             image4 = ImageDraw.Draw(image2)
             image4.text(
-                (10, 10), "SourceToxiC ", fill="white", font=font1, align="right"
+                (10, 10), "SourceToxiC ", fill="white", font=font1, align="left"
             )
             image4.text(
                 (670, 150),
@@ -163,12 +163,12 @@ async def get_thumb(videoid):
             duration = f"Duration : {duration} Mins"
             channel = f"Channel : @SourceToxiC"
 
-            image4.text((670, 450), text=views, fill="white", font=font4, align="right")
+            image4.text((670, 450), text=views, fill="white", font=font4, align="left")
             image4.text(
-                (670, 500), text=duration, fill="white", font=font4, align="right"
+                (670, 500), text=duration, fill="white", font=font4, align="left"
             )
             image4.text(
-                (670, 550), text=channel, fill="white", font=font4, align="right"
+                (670, 550), text=channel, fill="white", font=font4, align="left"
             )
 
             image2 = ImageOps.expand(image2, border=0, fill=make_col())
