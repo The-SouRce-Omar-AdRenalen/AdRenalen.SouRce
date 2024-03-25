@@ -95,9 +95,9 @@ async def get_thumb(videoid):
             color = make_col()
 
             data = np.array(im)
-            black, black, black, black = data.T
+            black, lead, blue, alpha = data.T
 
-            white_areas = (black == 255) & (black == 255) & (black == 255)
+            white_areas = (black == 255) & (blue == 255) & (lead == 255)
             data[..., :-1][white_areas.T] = color
 
             im2 = Image.fromarray(data)
@@ -171,7 +171,7 @@ async def get_thumb(videoid):
                 (670, 550), text=channel, fill="white", font=font4, align="left"
             )
 
-            image2 = ImageOps.expand(image2, border=20, fill=make_col())
+            image2 = ImageOps.expand(image2, border=0, fill=make_col())
             image2 = image2.convert("RGB")
             image2.save(f"cache/{videoid}.jpg")
             file = f"cache/{videoid}.jpg"
