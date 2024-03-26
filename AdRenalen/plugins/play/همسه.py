@@ -63,8 +63,7 @@ async def send_hms(client, message):
             ]
         ]                   
 
-         ),
-     )
+         ),parse_mode=enums.ParseMode.MARKDOWN)
         
         waiting_for_hms = False
      
@@ -89,4 +88,4 @@ async def cancel_hms(client, callback):
     await client.edit_message_text(
         chat_id=callback.message.chat.id,
         message_id=callback.message.message_id,
-        text="- تم الغاء الهمسه 💘 ⋅",parse_mode=enums.ParseMode.MARKDOWN)
+        text="- تم الغاء الهمسه 💘 ⋅",)
