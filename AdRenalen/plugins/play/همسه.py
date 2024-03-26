@@ -49,7 +49,7 @@ async def send_hms(client, message):
         
         await app.send_message(
     chat_id=in_id,
-    text=f"• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •\n-᚜ - الـ مستخدم » ⦗ {(await app.get_chat(to_id)).first_name} ⦘ 💘 ⋅\n-᚜ - لديك همسة من الـ مستخدم » ⦗ {(await app.get_chat(from_id)).first_name} ⦘ 💘 ⋅",
+    text=f"-᚜ - الـ مستخدم » ⦗ {(await app.get_chat(to_id)).first_name} ⦘ 💘 ⋅\n-᚜ - لديك همسة من الـ مستخدم » ⦗ {(await app.get_chat(from_id)).first_name} ⦘ 💘 ⋅\n -᚜ - لا يمكن لاحد غيرك رؤية الهمسة 💘 ⋅",
     reply_markup=InlineKeyboardMarkup(
     [
                     InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url=f"{from_url}"), 
