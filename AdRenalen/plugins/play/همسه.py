@@ -49,14 +49,16 @@ async def send_hms(client, message):
         
         await app.send_message(
     chat_id=in_id,
-    text=f"╖ المستخدم [{(await app.get_chat(to_id)).first_name}](tg://openmessage?user_id={to_id})\n╢ لديك همسة من البني آدم دا [{(await app.get_chat(from_id)).first_name}](tg://openmessage?user_id={from_id})\n╜انت فقط من يستطيع رؤيتها 🔐",
+    text=f"• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •\n-᚜ - الـ مستخدم » ⦗ {(await app.get_chat(to_id)).first_name} ⦘ 💘 ⋅\n-᚜ - لديك همسة من الـ مستخدم » ⦗ {(await app.get_chat(from_id)).first_name} ⦘ 💘 ⋅"
     reply_markup=InlineKeyboardMarkup(
-        [
-            [
-                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", url=f"{to_url}"), 
-                ],[
+    [
                     InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url=f"{from_url}"), 
                     InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
+                ],
+        [
+        
+            [
+                    InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", url=f"{to_url}"), 
                 ],[
                     InlineKeyboardButton(
                         "‹ 𝐂𝐇.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/WA_ADRENALEN"),
