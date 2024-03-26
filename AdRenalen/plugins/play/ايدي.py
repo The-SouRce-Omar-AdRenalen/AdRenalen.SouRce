@@ -1,7 +1,7 @@
 import pyrogram
 from pyrogram import Client, filters
 
-@Client.on_message(filters.command('id'))
+@app.on_message(filters.command('id'))
 def ids(client: Client, message: Message):
     elketib = message.reply_to_message
     if elketib:
