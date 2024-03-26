@@ -51,14 +51,12 @@ async def send_hms(client, message):
     chat_id=in_id,
     text=f"-᚜ - الـ مستخدم » ⦗ {(await app.get_chat(to_id)).first_name} ⦘ 💘 ⋅\n-᚜ - لديك همسة من الـ مستخدم » ⦗ {(await app.get_chat(from_id)).first_name} ⦘ 💘 ⋅\n -᚜ - لا يمكن لاحد غيرك رؤية الهمسة 💘 ⋅",
     reply_markup=InlineKeyboardMarkup(
-    [
-                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url=f"{from_url}"), 
-                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
-                ],
         [
-        
             [
                     InlineKeyboardButton("‹ مستلم الهمسه 💘 ›", url=f"{to_url}"), 
+                ],[
+                    InlineKeyboardButton("‹ مرسل الهمسه 💘 ›", url=f"{from_url}"), 
+                    InlineKeyboardButton("‹ اظغط لرؤية الهمسه 💘 ›", callback_data="hms_answer"),
                 ],[
                     InlineKeyboardButton(
                         "‹ 𝐂𝐇.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/WA_ADRENALEN"),
