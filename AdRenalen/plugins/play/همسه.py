@@ -49,7 +49,7 @@ async def send_hms(client, message):
         
         await app.send_message(
     chat_id=in_id,
-    text=f"[{app.get_chat.first_name}](tg://openmessage?user_id={to_id}]استعمل الازرار لرؤية الهمسه 💘 ⋅**" 
+    text=f"╖ المستخدم [{(await app.get_chat(to_id)).first_name}](tg://openmessage?user_id={to_id})\n╢ لديك همسة من البني آدم دا [{(await app.get_chat(from_id)).first_name}](tg://openmessage?user_id={from_id})\n╜انت فقط من يستطيع رؤيتها 🔐",
     reply_markup=InlineKeyboardMarkup(
         [
             [
