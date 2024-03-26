@@ -163,6 +163,11 @@ async def huhh(client: Client, message: Message):
          ),
      )
 
+@app.on_message(filters.command(["اسمي","اسمي اي","قول اسمي"], ""), group=123222)
+async def vgdg(client: Client, message: Message):
+    await message.reply_text(
+        f"""- اسمك » ⦗ {message.from_user.mention} ⦘ 💘 ⋅""") 
+
 
 @app.on_message(filters.command(["قفل الايدي", "تعطيل الايدي"], ""), group=2272)
 async def iddlock(client, message):
@@ -205,34 +210,6 @@ async def iddd(client, message):
         ]
          ),
      )
-@app.on_message(filters.command(["بيو","تخ"], ""), group=221222)
-async def huhh(client, message):
-    to_id = int(ahmed.split("to")[-1].split("in")[0])
-    from_id = int(ahmed.split("ahmed")[-1].split("to")[0])
-    in_id = int(caption.split("in")[-1])
-    to_url = f"tg://openmessage?user_id={to_id}"
-    from_url = f"tg://openmessage?user_id={from_id}"
-    ahmed = message.text
-    await message.reply_animation(
-        animation=f"https://telegra.ph/file/5a18fe591860a8a98f39f.mp4",
-        caption=f"""↯︙قتل ↫ ⦗ {app.get_chat(to_id).first_name}]({to_url}) ⦘\nالضحيه دا 😢 ↫ ⦗ {app.get_chat(from_id).first_name} ⦘\nانا لله وانـا اليـه راجعـون 😢😢""",
-    )
-    reply_markup=InlineKeyboardMarkup(
-
-       [
-           [
-               InlineKeyboardButton(
-                   "‹ : 𝖬𝖺𝖳𝗋𝗂x 𝖳𝖾𝖠𝗆 : ›", url=f"https://t.me/DEV_ADRENalen"),
-           ],
-       ]
-    ),
-    
-    
-    
-@app.on_message(filters.command(["اسمي","اسمي اي","قول اسمي"], ""), group=123222)
-async def vgdg(client: Client, message: Message):
-    await message.reply_text(
-        f"""- اسمك » ⦗ {message.from_user.mention} ⦘ 💘 ⋅""") 
 
 ##############################################################
 ##############################################################
