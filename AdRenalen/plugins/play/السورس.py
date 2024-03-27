@@ -173,9 +173,9 @@ async def vgdg(client: Client, message: Message):
 async def iddlock(client, message):
    get = await client.get_chat_member(message.chat.id, message.from_user.id)
    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-      if message.chat.id in iddof:
+      if message.chat.id in idd:
         return await message.reply_text("تم معطل من قبل🔒")
-      iddof.append(message.chat.id)
+      idd.append(message.chat.id)
       return await message.reply_text("تم تعطيل الايدي بنجاح ✅🔒")
    else:
       return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
@@ -184,15 +184,15 @@ async def iddlock(client, message):
 async def iddopen(client, message):
    get = await client.get_chat_member(message.chat.id, message.from_user.id)
    if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-      if not message.chat.id in iddof:
+      if not message.chat.id in idd:
         return await message.reply_text("الايدي مفعل من قبل ✅")
-      iddof.remove(message.chat.id)
+      idd.remove(message.chat.id)
       return await message.reply_text("تم فتح الايدي بنجاح ✅🔓")
    else:
       return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
 
 @app.on_message(filters.command(["ايدي","الايدي","ا"], ""), group=27722)
-async def iddd(client, message):
+async def idd(client, message):
     if message.chat.id in iddof:
       return
     usr = await client.get_chat(message.from_user.id)
@@ -202,7 +202,7 @@ async def iddd(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                    InlineKeyboardButton(f"{iddof} 🤍", callback_data=f"heart{usr.id}"),
+                    InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{usr.id}"),
                 ],[
                     InlineKeyboardButton(
                         name, url=f"https://t.me/{message.from_user.username}"),
