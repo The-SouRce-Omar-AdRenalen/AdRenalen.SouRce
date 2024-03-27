@@ -202,7 +202,7 @@ async def iddd(client, message):
     reply_markup=InlineKeyboardMarkup(
         [
             [
-                    InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{usr.id}"),
+                    InlineKeyboardButton(f"{iddof} 🤍", callback_data=f"heart{usr.id}"),
                 ],[
                     InlineKeyboardButton(
                         name, url=f"https://t.me/{message.from_user.username}"),
