@@ -15,16 +15,19 @@ name = "يصحبي"
 @app.on_message(filters.regex("تعين الصلاة علي النبي")& filters.private & SUDOERS, group=7113)
 async def set_bot_name(client, message):
     global name
-    ask = await app.ask(message.chat.id, "ارسل الاسم الجديد", timeout=320)
+    ask = await app.ask(message.chat.id, "ارسل الاسم الجديد", timeout=300)
     name = ask.text
     await message.reply_text("تم تعيين الاسم بنجاح")
 
 caesar_responses = [
     "صلي علي النبي وتبسم ♥️♥️♥️♥️!",
     "صلي علي النبي وتبسم {name} ♥️♥️♥️♥️!",
-]
+    "صلي علي النبي وتبسم يرايق ♥️♥️!",
+    "صلي علي قلبك يطيب ♥️♥️!",
+    "صلي علي النبي وتبسم يزميلي ♥️♥️♥️♥️!",
+    ]
 
-@app.on_message(filters.command(["⋅","ـ",".",",","..","..."], ""), group=71134)
+@app.on_message(filters.command(["⋅","ـ",".",",","..","..."], ""), group=71135)
 async def caesar_bot(client, message):
     global name
     bot_username = (await app.get_me()).username
