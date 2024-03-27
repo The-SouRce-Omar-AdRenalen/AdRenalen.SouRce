@@ -200,18 +200,16 @@ async def iddopen(client: Client, message):
     else:
         return await message.reply_text("♪ عذرا عزيزي هذا الامر للادمن الجروب فقط 💎 .")
 
-@app.on_message(filters.command(["ايدي","أ"], ""))
+@app.on_message(filters.command(["ايدي"], ""))
 async def muid(client: Client, message):
     if message.chat.id in iddof:
         return await message.reply_text("♪ تم تعطيل امر الايدي من قبل المشرفين 💎 .")
-    
-    user = await client.get_chat(message.from_user.id)
-    user_id = user.id
-    username = user.username
-    first_name = user.first_name
-    bioo = user.bio
-    photo = user.photo.big_file_id
-    if not id.get(message.from_user.id):
+       user = await client.get_chat(message.from_user.id)
+       user_id = user.id
+       username = user.username
+       first_name = user.first_name
+       bioo = user.bio
+       photo = user.photo.big_file_id
     if photo:
         photo = await client.download_media(photo)
     else:
@@ -223,7 +221,7 @@ async def muid(client: Client, message):
     idd = len(id[user.id])
     
     caption = f"🤡 ¦𝙽𝙰𝙼𝙴 :{message.from_user.mention}\n🎯 ¦𝚄𝚂𝙴𝚁 :@{message.from_user.username}\n🎃 ¦𝙸𝙳 :{message.from_user.id}\n💌 ¦𝙱𝙸𝙾 :{usr.bio}\n✨ ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n♻️ ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :{message.chat.id}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} ♥️", callback_data=f"heart{user_id}")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{user_id}")]])
     
     await message.reply_photo(photo=photo, caption=caption, reply_markup=reply_markup)
 
@@ -245,9 +243,10 @@ async def heart(client, query: CallbackQuery):
     idd = len(id[usr.id])
     
     caption = f"🤡 ¦𝙽𝙰𝙼𝙴 :{message.from_user.mention}\n🎯 ¦𝚄𝚂𝙴𝚁 :@{message.from_user.username}\n🎃 ¦𝙸𝙳 :{message.from_user.id}\n💌 ¦𝙱𝙸𝙾 :{usr.bio}\n✨ ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n♻️ ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :{message.chat.id}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} ♥️", callback_data=f"heart{usr.id}")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{usr.id}")]])
     
     await query.edit_message_text(caption, reply_markup=reply_markup)
+    
 
 ##############################################################
 ##############################################################
