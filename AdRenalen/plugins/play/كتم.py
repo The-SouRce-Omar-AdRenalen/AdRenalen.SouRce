@@ -8,7 +8,7 @@ from config import *
 
 
 mutes = []
-@app.on_message(filters.command("dmute") & filters.group)
+@app.on_message(filters.command(["كتم"],"") & filters.group)
 async def mute(app,message):
    member = await message.chat.get_member(message.from_user.id)
    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
@@ -28,7 +28,7 @@ async def mute(app,message):
        mutes.append(x)
        return await message.reply("**{} has muted successfully by {} .**".format(message.reply_to_message.from_user.mention,message.from_user.mention))
        
-@app.on_message(filters.command("undmute") & filters.group)
+@app.on_message(filters.command(["الغاء الكتم"],"") & filters.group)
 async def unmute(app,message):
    member = await message.chat.get_member(message.from_user.id)
    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
@@ -48,7 +48,7 @@ async def unmute(app,message):
        mutes.remove(x)
        return await message.reply("**{} has unmuted successfully by {} .**".format(message.reply_to_message.from_user.mention,message.from_user.mention))
 
-@app.on_message(filters.command("dmutes") & filters.group)
+@app.on_message(filters.command(["المكتومين"],"")   & filters.group)
 def get_dmute(app, message):
    if len(mutes) == 0: return
    member = message.chat.get_member(message.from_user.id)
