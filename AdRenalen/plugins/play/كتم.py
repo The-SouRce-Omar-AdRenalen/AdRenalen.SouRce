@@ -1,6 +1,6 @@
 from pyrogram import Client, filters, idle
 from pyrogram.enums import ChatMemberStatus
-from config
+from config *
 
 mutes = []
 @app.on_message(filters.command("dmute") & filters.group)
