@@ -43,7 +43,7 @@ async def unmute(app,message):
      user_id = str(message.reply_to_message.from_user.id)
      x = "{}@{}".format(chat_id,user_id)
      if not x in mutes:
-       return await message.reply("- تم الغاء كتم المستخدم في هذه المجموعة بنجاح 💘 ⋅)
+       return await message.reply("- تم الغاء كتم المستخدم في هذه المجموعة بنجاح 💘 ⋅")
      else:
        mutes.remove(x)
        return await message.reply("- العضو ⦗ {} ⦘  تم الغاء كتمة بواسطة ⦗ {} ⦘ 💘 ⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
