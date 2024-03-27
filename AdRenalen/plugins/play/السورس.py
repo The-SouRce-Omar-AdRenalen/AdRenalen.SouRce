@@ -10,6 +10,7 @@ import requests
 from pyrogram import enums
 from pyrogram import types
 import aiohttp
+from pyrogram.types import CallbackQuery
 from pyrogram import filters
 from pyrogram import Client
 from pyrogram.enums import ChatMemberStatus
@@ -199,7 +200,7 @@ async def iddopen(client: Client, message):
     else:
         return await message.reply_text("♪ عذرا عزيزي هذا الامر للادمن الجروب فقط 💎 .")
 
-@app.on_message(filters.command(["ايدي"], ""))
+@app.on_message(filters.command(["ايدي","أ"], ""))
 async def muid(client: Client, message):
     if message.chat.id in iddof:
         return await message.reply_text("♪ تم تعطيل امر الايدي من قبل المشرفين 💎 .")
@@ -209,7 +210,8 @@ async def muid(client: Client, message):
     username = user.username
     first_name = user.first_name
     bioo = user.bio
-    
+    photo = user.photo.big_file_id
+    if not id.get(message.from_user.id):
     photo = user.photo.big_file_id
     if photo:
         photo = await client.download_media(photo)
@@ -222,9 +224,31 @@ async def muid(client: Client, message):
     idd = len(id[user.id])
     
     caption = f"name : {first_name}\nid : {user_id}\nuser : [@{username}]\nbio : {bioo}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{user_id}")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} ♥️", callback_data=f"heart{user_id}")]])
     
     await message.reply_photo(photo=photo, caption=caption, reply_markup=reply_markup)
+
+@app.on_callback_query(filters.regex("heart"))
+async def heart(client, query: CallbackQuery):
+    callback_data = query.data.strip()
+    callback_request = callback_data.replace("heart", "")
+    username = int(callback_request)
+    usr = await client.get_chat(username)
+    
+    if usr.id not in id:
+        id[usr.id] = []
+    
+    if query.from_user.mention not in id[usr.id]:
+        id[usr.id].append(query.from_user.mention)
+    else:
+        id[usr.id].remove(query.from_user.mention)
+    
+    idd = len(id[usr.id])
+    
+    caption = f"name : {usr.first_name}\nid : {usr.id}\nuser : [@{usr.username}]\nbio : {usr.bio}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} ♥️", callback_data=f"heart{usr.id}")]])
+    
+    await query.edit_message_text(caption, reply_markup=reply_markup)
 
 ##############################################################
 ##############################################################
