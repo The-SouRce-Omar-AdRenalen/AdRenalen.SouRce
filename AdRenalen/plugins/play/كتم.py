@@ -1,6 +1,5 @@
 from pyrogram import Client, filters, idle
 from pyrogram.enums import ChatMemberStatus
-from config 
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import os
