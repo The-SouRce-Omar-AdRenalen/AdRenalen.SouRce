@@ -7,7 +7,7 @@ from AdRenalen import app
 from config import *
 
 
-@app.on_message(filters.command("قول", ""))
+@app.on_message(filters.command("قول","انطق","قولي", ""))
 async def speak(_, message: Message):
     chat_id = message.chat.id
     data = message.text.split(maxsplit=1)
