@@ -212,7 +212,6 @@ async def muid(client: Client, message):
     bioo = user.bio
     photo = user.photo.big_file_id
     if not id.get(message.from_user.id):
-    photo = user.photo.big_file_id
     if photo:
         photo = await client.download_media(photo)
     else:
