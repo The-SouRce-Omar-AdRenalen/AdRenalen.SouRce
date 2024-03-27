@@ -167,7 +167,6 @@ async def huhh(client: Client, message: Message):
 @app.on_message(filters.command([".","-",".."], ""), group=122212)
 async def huhh(client: Client, message: Message):
 caption=f"""[صلي علي النبي وتبسم ♥️♥️♥️♥️!](https://t.me/{bot_username}?startgroup=True)""",
-parse_mode=enums.ParseMode
 reply_markup=InlineKeyboardMarkup(
             [
                 [
