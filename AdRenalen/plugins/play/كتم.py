@@ -1,6 +1,12 @@
 from pyrogram import Client, filters, idle
 from pyrogram.enums import ChatMemberStatus
-from config *
+from config 
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+import os
+from AdRenalen import app
+from config import *
+
 
 mutes = []
 @app.on_message(filters.command("dmute") & filters.group)
