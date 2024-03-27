@@ -24,4 +24,4 @@ async def speak(_, message: Message):
         await app.send_voice(chat_id=chat_id, voice=audio, reply_to_message_id=message.id)
         await wait.delete()
     os.remove(f"{message.from_user.username}.mp3",[InlineKeyboardButton("خدني لجروبك والنبي🥺♥", url=f"https://t.me/{bot_username}?startgroup=True")]
-    ])
+    ],
