@@ -8,6 +8,7 @@ import os
 import time
 import requests
 from pyrogram import enums
+from pyrogram import types
 import aiohttp
 from pyrogram import filters
 from pyrogram import Client
@@ -25,7 +26,7 @@ from pyrogram.errors import FloodWait
 @app.on_message(filters.command(["سورس","السورس,","مصنع","صانع","مطور,","مطور السورس","المطور"], ""), group=221212)
 async def huhh(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://telegra.ph/file/6b073b212869b5630968f.jpg",
+        photo=f"https://d.top4top.io/m_30038easz0.mp4",
         caption=f"""• ⌯ 𝐓𝐇𝐄.𝐒𝐎𝐔𝐑𝐂𝐄.𝐀𝐃𝐑𝐄𝐍𝐀𝐋𝐄𝐍 ⌯ •\n\n- 𝐓𝐇𝐄 𝐁𝐄𝐒𝐓 𝐁𝐎𝐓 𝐎𝐍 𝐓𝐄𝐋𝐄𝐆𝐑𝐀𝐌 𝐒𝐔𝐏𝐄𝐑 𝐅𝐀𝐒𝐓 𝐀𝐍𝐃 𝐇𝐈𝐆𝐇 𝐀𝐂𝐂𝐔𝐑𝐀𝐂𝐘 ❤️🌿 ⋅""",
         reply_markup=InlineKeyboardMarkup(
         [
@@ -162,6 +163,18 @@ async def huhh(client: Client, message: Message):
         ]
          ),
      )
+
+@app.on_message(filters.command([".","-",".."], ""), group=122212)
+async def huhh(client: Client, message: Message):
+caption=f"""[صلي علي النبي وتبسم ♥️♥️♥️♥️!](https://t.me/{bot_username}?startgroup=True)""",
+reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        name, url=f"https://t.me/{message.from_user.username}")
+                ],
+            ]
+        ),parse_mode=enums.ParseMode)
 
 @app.on_message(filters.command(["اسمي","اسمي اي","قول اسمي"], ""), group=123222)
 async def vgdg(client: Client, message: Message):
