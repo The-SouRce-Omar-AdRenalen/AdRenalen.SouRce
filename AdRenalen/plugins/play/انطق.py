@@ -18,33 +18,27 @@ async def speak(_, message: Message):
     else:
         language = 'ar'
     audio = gTTS(text=data[1], lang=language)
-    audio.save(f"{message.from_user.username}.mp3",
+    audio.save(f"{message.from_user.username}.mp3"),
     reply_markup=InlineKeyboardMarkup(
-        [
             [
+                [
                     InlineKeyboardButton(
-                        " ‹ قناة السورس 💘 ⋅ › ", url=f"https://t.me/WA_AdRenalen"),
-                ],[
-                    InlineKeyboardButton(
-                        "‹ اضف بوت السورس الي مجموعتك ⚡️🎸 ⋅ ›", url=f"http://t.me/Xx_MUOSIC_BOT?startgroup=new"),
+                        name, url=f"https://t.me/{message.from_user.username}")
+                ],
             ]
-        ]
-         ),
-     )
+        ),
+    )
 	
     with open(f"{message.from_user.username}.mp3", "rb") as audio:
         await app.send_voice(chat_id=chat_id, voice=audio, reply_to_message_id=message.id)
         await wait.delete()
-    os.remove(f"{message.from_user.username}.mp3",
+    os.remove(f"{message.from_user.username}.mp3"),
     reply_markup=InlineKeyboardMarkup(
-        [
             [
+                [
                     InlineKeyboardButton(
-                        " ‹ قناة السورس 💘 ⋅ › ", url=f"https://t.me/WA_AdRenalen"),
-                ],[
-                    InlineKeyboardButton(
-                        "‹ اضف بوت السورس الي مجموعتك ⚡️🎸 ⋅ ›", url=f"http://t.me/Xx_MUOSIC_BOT?startgroup=new"),
+                        name, url=f"https://t.me/{message.from_user.username}")
+                ],
             ]
-        ]
-         ),
-     )
+        ),
+    )
