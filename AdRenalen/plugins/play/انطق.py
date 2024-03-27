@@ -19,24 +19,8 @@ async def speak(_, message: Message):
         language = 'ar'
     audio = gTTS(text=data[1], lang=language)
     audio.save(f"{message.from_user.username}.mp3"),
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        ),
-    
+
     with open(f"{message.from_user.username}.mp3", "rb") as audio:
         await app.send_voice(chat_id=chat_id, voice=audio, reply_to_message_id=message.id)
         await wait.delete()
     os.remove(f"{message.from_user.username}.mp3"),
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        )
