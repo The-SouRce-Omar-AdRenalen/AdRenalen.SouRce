@@ -39,5 +39,4 @@ async def speak(_, message: Message):
                         name, url=f"https://t.me/{message.from_user.username}")
                 ],
             ]
-        ),
-    )
+        )
