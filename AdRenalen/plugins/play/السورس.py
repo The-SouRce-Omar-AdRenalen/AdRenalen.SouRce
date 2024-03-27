@@ -164,18 +164,7 @@ async def huhh(client: Client, message: Message):
          ),
      )
 
-@app.on_message(filters.command([".","-",".."], ""), group=122212)
-async def huhh(client: Client, message: Message):
-caption=f"""[صلي علي النبي وتبسم ♥️♥️♥️♥️!](https://t.me/{bot_username}?startgroup=True)""",
-reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        ),
-    )
+
 
 @app.on_message(filters.command(["اسمي","اسمي اي","قول اسمي"], ""), group=123222)
 async def vgdg(client: Client, message: Message):
