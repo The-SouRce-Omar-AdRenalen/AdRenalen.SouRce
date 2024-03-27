@@ -27,7 +27,7 @@ caesar_responses = [
     "صلي علي النبي وتبسم يزميلي ♥️♥️♥️♥️!",
     ]
 
-@app.on_message(filters.command(["⋅","ـ",".",",","..","..."], ""), group=71135)
+@app.on_message(filters.command(["⋅","ـ",".","..","..."], ""), group=71135)
 async def caesar_bot(client, message):
     global name
     bot_username = (await app.get_me()).username
