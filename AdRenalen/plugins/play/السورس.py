@@ -205,11 +205,10 @@ async def muid(client: Client, message):
     if message.chat.id in iddof:
         return await message.reply_text("♪ تم تعطيل امر الايدي من قبل المشرفين 💎 .")
     user = await client.get_chat(message.from_user.id)
-    user_id = user.id    
+    user_id = user.id
     username = user.username
     first_name = user.first_name
     bioo = user.bio
-    photo = user.photo.big_file_id
     if photo:
         photo = await client.download_media(photo)
     else:
