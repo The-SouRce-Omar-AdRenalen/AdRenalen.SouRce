@@ -26,9 +26,9 @@ async def mute(app,message):
        return await message.reply("- تم كتم هذا العضو من قبل 💘 ⋅")
      else:
        mutes.append(x)
-     return   await message.reply_photo(
-            photo = "https://telegra.ph/file/6b073b212869b5630968f.jpg",
-        caption = "- العضو ⦗ {} ⦘  تم كتمة بواسطة ⦗ {} ⦘ 💘 ⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
+     return   await message.reply_video(
+        video= = "https://telegra.ph/file/9a579139d2171ee0c8d20.mp4",
+        caption = "- العضو ⦗ {} ⦘ ⚡️ ⋅\n- تم كتمة بواسطة ⦗ {} ⦘ ⚡️⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
               
 @app.on_message(filters.command(["الغاء الكتم"],"") & filters.group)
 async def unmute(app,message):
