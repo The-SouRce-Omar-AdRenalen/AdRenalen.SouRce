@@ -203,10 +203,8 @@ async def muid(client: Client, message):
     user_id = user.id
     username = user.username
     first_name = user.first_name
-    bio = user.bio
-    chat = message.chat.title
-    chat_id = message.chat.id
-   
+    bioo = user.bio
+    
     photo = user.photo.big_file_id
     if photo:
         photo = await client.download_media(photo)
@@ -218,7 +216,7 @@ async def muid(client: Client, message):
     
     idd = len(id[user.id])
     
-    caption = f"┇‌ ⤹•ɴᴀᴍᴇ : {first_name}\n┇‌ ⤹•ᴜsᴇʀ : @{username}\n┇‌ ═══════『♡』═══════\n┇‌ ⤹•ɪᴅ : {user_id}\n┇‌ ⤹•ʙɪᴏ : {bio}\n┇‌═══════『♡』═══════\n┇‌ ⤹•ᴄʜᴀᴛ : {chat}\n┇‌ ⤹•ᴄʜᴀᴛ ɪᴅ : {chat_id}"
+    caption = f"name : {first_name}\nid : {user_id}\nuser : [@{username}]\nbio : {bioo}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{user_id}")]])
     
     await message.reply_photo(photo=photo, caption=caption, reply_markup=reply_markup)
@@ -227,21 +225,21 @@ async def muid(client: Client, message):
 async def heart(client, query: CallbackQuery):
     callback_data = query.data.strip()
     callback_request = callback_data.replace("heart", "")
-    user_id = int(callback_request)
-    user = await client.get_chat(user_id)
+    username = int(callback_request)
+    usr = await client.get_chat(username)
     
-    if user.id not in id:
-        id[user.id] = []
+    if usr.id not in id:
+        id[usr.id] = []
     
-    if query.from_user.mention not in id[user.id]:
-        id[user.id].append(query.from_user.mention)
+    if query.from_user.mention not in id[usr.id]:
+        id[usr.id].append(query.from_user.mention)
     else:
-        id[user.id].remove(query.from_user.mention)
+        id[usr.id].remove(query.from_user.mention)
     
-    idd = len(id[user.id])
+    idd = len(id[usr.id])
     
-    caption = f"┇‌ ⤹•ɴᴀᴍᴇ : {user.first_name}\n┇‌ ⤹•ᴜsᴇʀ : @{user.username}\n┇‌ ═══════『♡』═══════\n┇‌ ⤹•ɪᴅ : {user_id}\n┇‌ ⤹•ʙɪᴏ : {user.bio}\n┇‌═══════『♡』═══════\n┇‌ ⤹•ᴄʜᴀᴛ : {query.message.chat.title}\n┇‌ ⤹•ᴄʜᴀᴛ ɪᴅ : {query.message.chat.id}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{user_id}")]])
+    caption = f"name : {usr.first_name}\nid : {usr.id}\nuser : [@{usr.username}]\nbio : {usr.bio}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(f"{idd} 🤍", callback_data=f"heart{usr.id}")]])
     
     await query.edit_message_text(caption, reply_markup=reply_markup)
 
