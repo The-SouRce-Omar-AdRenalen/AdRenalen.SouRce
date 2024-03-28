@@ -19,19 +19,19 @@ async def huhh(client, message):
     Omar = message.text
     await message.reply_video(
         video = "https://telegra.ph/file/5a18fe591860a8a98f39f.mp4",
-        caption = "↯︙قتل ↫ ⦗ {app.get_chat(to_id).first_name}]({to_url}) ⦘\nالضحيه دا 😢 ↫ ⦗ {app.get_chat(from_id).first_name} ⦘\nانا لله وانـا اليـه راجعـون 😢😢",
-    )
-    reply_markup=InlineKeyboardMarkup(
+        caption = "↯︙قتل ↫ ⦗ {app.get_chat(to_id).first_name}]({to_url}) ⦘\nالضحيه دا 😢 ↫ ⦗ {app.get_chat(from_id).first_name} ⦘\nانا لله وانـا اليـه راجعـون 😢😢",   
+  reply_markup=InlineKeyboardMarkup(
         [
             [
                     InlineKeyboardButton("‹ الـ قاتل  ›", url=f"{to_url}"), 
                 ],[
+                    InlineKeyboardButton("‹ الـ ضحية ›", url=f"{from_url}"),
                     InlineKeyboardButton(
-                        "‹ الـ ضحية ›", url=f"{from_url}"),
+                        "‹ 𝐃𝐄𝐕.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/DEV_ADRENALEN"),
+                ],[
+                    InlineKeyboardButton(
+                        "‹ 𝐂𝐇.𝐒𝐎𝐔𝐑𝐂𝐄 ›", url=f"http://t.me/WA_ADRENALEN"),
             ]
         ]                   
-        
-    ),parse_mode=enums.ParseMode.MARKDOWN)
-    
-    
-  
+
+         ),parse_mode=enums.ParseMode.MARKDOWN)
