@@ -38,7 +38,7 @@ async def unmute(app,message):
    else:
      if not message.reply_to_message:
        return await message.reply("- عليك الرد علي مستخدم وان يكون عضو ليس مشرف 💘 ⋅")
-     member = await message.chat.get_member(message.reply_to_message.from_user.id)ههههههههههههههههههههههههه
+     member = await message.chat.get_member(message.reply_to_message.from_user.id)
      if member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
        return await message.reply("- لا يمكنني استعمال الامر علي المشرفين 💘 ⋅")
      chat_id = str(message.chat.id)
