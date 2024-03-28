@@ -27,7 +27,7 @@ async def mute(app,message):
      else:
        mutes.append(x)
      return   await message.reply_video(
-        video= = "https://telegra.ph/file/9a579139d2171ee0c8d20.mp4",
+        video = "https://telegra.ph/file/9a579139d2171ee0c8d20.mp4",
         caption = "- العضو ⦗ {} ⦘ ⚡️ ⋅\n- تم كتمة بواسطة ⦗ {} ⦘ ⚡️⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
               
 @app.on_message(filters.command(["الغاء الكتم"],"") & filters.group)
