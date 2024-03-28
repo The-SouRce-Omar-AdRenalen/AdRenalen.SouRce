@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from AdRenalen import app
 
 
-@app.on_message(command(["بيو بيو","بيو","تخ"],"") & filters.group)
+@app.on_message(command["بيو بيو","بيو","تخ"],"") & filters.group)
 async def huhh(client, message):
     to_id = int(Omar.split("to")[-1].split("in")[0])
     from_id = int(Omar.split("Omar")[-1].split("to")[0])
