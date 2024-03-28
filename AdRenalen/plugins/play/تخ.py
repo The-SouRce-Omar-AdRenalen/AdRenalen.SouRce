@@ -1,5 +1,4 @@
 from strings.filters import command
-from pyrogram import filters.group
 import asyncio
 from pyrogram import Client
 from pyrogram import enums
