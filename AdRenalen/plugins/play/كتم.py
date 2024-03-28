@@ -26,8 +26,10 @@ async def mute(app,message):
        return await message.reply("- تم كتم هذا العضو من قبل 💘 ⋅")
      else:
        mutes.append(x)
-       return await message.reply("- العضو ⦗ {} ⦘  تم كتمة بواسطة ⦗ {} ⦘ 💘 ⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
-       
+     return   await message.reply_photo(
+            photo=f"https://telegra.ph/file/6b073b212869b5630968f.jpg",
+        caption=f"- العضو ⦗ {} ⦘  تم كتمة بواسطة ⦗ {} ⦘ 💘 ⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
+              
 @app.on_message(filters.command(["الغاء الكتم"],"") & filters.group)
 async def unmute(app,message):
    member = await message.chat.get_member(message.from_user.id)
@@ -36,7 +38,7 @@ async def unmute(app,message):
    else:
      if not message.reply_to_message:
        return await message.reply("- عليك الرد علي مستخدم وان يكون عضو ليس مشرف 💘 ⋅")
-     member = await message.chat.get_member(message.reply_to_message.from_user.id)
+     member = await message.chat.get_member(message.reply_to_message.from_user.id)ههههههههههههههههههههههههه
      if member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
        return await message.reply("- لا يمكنني استعمال الامر علي المشرفين 💘 ⋅")
      chat_id = str(message.chat.id)
