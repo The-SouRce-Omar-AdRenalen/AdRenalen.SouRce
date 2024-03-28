@@ -28,7 +28,7 @@ async def mute(app,message):
        mutes.append(x)
      return   await message.reply_photo(
             photo="https://telegra.ph/file/6b073b212869b5630968f.jpg",
-        caption=f"- العضو ⦗ {} ⦘  تم كتمة بواسطة ⦗ {} ⦘ 💘 ⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
+        caption="- العضو ⦗ {} ⦘  تم كتمة بواسطة ⦗ {} ⦘ 💘 ⋅".format(message.reply_to_message.from_user.mention,message.from_user.mention))
               
 @app.on_message(filters.command(["الغاء الكتم"],"") & filters.group)
 async def unmute(app,message):
